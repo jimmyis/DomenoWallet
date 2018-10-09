@@ -58,7 +58,7 @@
       :title="loadingTitle" :msg="loadingMsg" :closeable="delerror" @close="hideLoadingView"/>
 
      <div class="pwdSheetWrapper" v-if="showPwdSheet">
-        <v-bottom-sheet  v-model="showPwdSheet"  dark>
+        <v-bottom-sheet  v-model="showPwdSheet" light>
           <div class="sheet-content">
             <div class="sheet-input">
               <v-text-field
@@ -68,7 +68,7 @@
                     :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                     :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                     :type="pwdvisible ? 'text':'password'"
-                    required dark
+                    requiredlight
                   ></v-text-field>
             </div>
             <div  class="sheet-btns">
@@ -342,7 +342,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
 .right
@@ -350,7 +350,7 @@ export default {
     font-size: 36px
 .card-content
   overflow: hidden
-  background: $primarycolor.gray
+  background-color:$secondarycolor.white
   
 .account-row
   overflow: hidden
@@ -368,14 +368,14 @@ export default {
   width: 100%
   padding-top: 5px
   padding-bottom: 5px
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   padding-left:5px
   .avatar
     width: 40px
     height: 40px
-    background: $primarycolor.gray
+    background: $primarycolor.green
     .iconfont
-      color: $primarycolor.green
+      color: $primarycolor.white
       font-size: 20px
   .name
     font-size: 16px

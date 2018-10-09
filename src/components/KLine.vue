@@ -443,7 +443,8 @@ export default {
         line-height: 26px
         height: 26px
         font-size: 14px
-        color: $primarycolor.font
+        font-weight: 600
+        color: $primarycolor.white
         &.up
             background: $primarycolor.green
         &.down

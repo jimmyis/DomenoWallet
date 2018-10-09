@@ -19,7 +19,7 @@
               item-value="id"
               item-text="code"
               :return-object="assetChoseReturnObject"
-              dark
+              light
             >
             <template slot="selection" slot-scope="data">
               <span class="asset-select-code">{{data.item.code}}</span>
@@ -41,7 +41,7 @@
               :label="$t('Amount')"
               :value="amount"
               @input="updateAmount"
-              dark
+              light
               :suffix="selectedasset.code"
               type="Number"
 
@@ -252,7 +252,7 @@ export default {
 @require '~@/stylus/color.styl'
 .card-content
   padding: 8px 8px 0px 8px
-  background-color:$secondarycolor.gray
+  background-color:$secondarycolor.white
   .label
     font-size: 14px
     color: $secondarycolor.font

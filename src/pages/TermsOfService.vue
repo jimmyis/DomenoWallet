@@ -14,10 +14,10 @@
     </div>
     <div class="footer" v-if="!showbackicon">
        <v-layout row wrap>
-        <v-flex xs6 @click="goback">
+        <v-flex class="button" xs6 @click="goback">
           <span>{{$t('Return')}}</span>
         </v-flex>
-        <v-flex xs6 @click="wallet">
+        <v-flex class="button" xs6 @click="wallet">
           <span>{{$t('Agree')}}</span>
         </v-flex>
        </v-layout>  
@@ -69,7 +69,7 @@ export default {
 <style  lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .terms-service-page
-  background: $primarycolor.gray
+  background: none
 .tbar
   z-index: 99
 .page-content
@@ -102,9 +102,14 @@ export default {
   right: 0
   z-index: 99
   background: $secondarycolor.gray
-  height: 42px
-  line-height: 42px
+  height: 36px
+  line-height: 36px
   font-size: 16px
   text-align: center
   color: $primarycolor.green
+  .button
+    padding-top: 4px
+    padding-bottom: 8px
+    color: $secondarycolor.white
+    background: $primarycolor.darkgreen
 </style>

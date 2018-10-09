@@ -138,7 +138,9 @@ export default {
   padding-top: calc(20px + env(safe-area-inset-top))
   padding-left: 20px
   padding-right: 20px
-  background: $primarycolor.gray
+  padding-bottom: calc(100px + constant(safe-area-inset-bottom))
+  padding-bottom: calc(100px + env(safe-area-inset-bottom))
+  background: $secondarycolor.white
   .label
     font-size: 14px
     color: $primarycolor.green

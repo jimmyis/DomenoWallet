@@ -19,7 +19,7 @@
                   ></v-switch>
             </li>
 
-            <li class="settings-li">
+            <!-- <li class="settings-li">
               <span>{{$t('PinCode')}}</span>
               <v-switch class="pincodeswitch f-right"
                   v-model="pinEnable"
@@ -28,15 +28,15 @@
                   @change="switchPinCode"
                   ></v-switch>
 
-            </li>
+            </li> -->
             <li class="settings-li" @click="toChangeLanguage">
               <span>{{$t('Language')}}</span>
               <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
             </li>
-            <li class="settings-li" @click="toChangeHorizon">
+            <!-- <li class="settings-li" @click="toChangeHorizon">
               <span>{{$t('PublicNetUrl')}}</span>
               <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
-            </li>
+            </li> -->
             <li class="settings-li" @click="toFederationService">
               <span>{{$t('FederationName')}}</span>
               <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
@@ -135,7 +135,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   //  position: absolute

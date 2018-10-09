@@ -13,19 +13,20 @@
       <card padding="10px 10px" class="mycard">
         <div class="card-content" slot="card-content">
           <ul class="settings-ul">
-               <v-text-field name="input-name" required dark
+            <li class="settings-li">
+               <v-text-field name="input-name" required light
                             :label="$t(namelabel)" v-model="name"
               ></v-text-field>
             </li>
             <li class="settings-li">
-              <v-text-field name="input-address" required dark 
+              <v-text-field name="input-address" required light 
                             :label="$t(addlabel)" v-model='address'
               ></v-text-field>
             </li>
             <li class="settings-li">
               <v-text-field name="input-memo" :label="$t(memolabel)"
                             v-model='memo'    
-                            dark  
+                            light  
               ></v-text-field>
             </li>
           </ul>
@@ -35,7 +36,7 @@
     <v-footer>        
       <v-layout row  wrap>
         <v-flex xs12>
-          <v-btn class='modify primary' :loading="working" block dark large @click="save">{{$t('Modify')}}</v-btn>
+          <v-btn class='modify primary' :loading="working" block light large @click="save">{{$t('Modify')}}</v-btn>
         </v-flex>
       </v-layout>  
     </v-footer>
@@ -157,7 +158,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   .content
     padding: 8px 8px
     display flex

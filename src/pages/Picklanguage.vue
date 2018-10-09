@@ -108,16 +108,16 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   height:100%
 .content
     padding : 7px 7px
-    background: $primarycolor.gray
+    background: $secondarycolor.white
     height:82vh
     .mycard
-        background:$secondarycolor.gray
+        background: $secondarycolor.white
         height:100% 
       .card-content
         .lang
@@ -138,10 +138,11 @@ export default {
     left: 0
     right: 0
     text-align:center
-    background: $primarycolor.gray
+    background: $primarycolor.darkgreen
     z-index: 9
-    color: $primarycolor.green
+    color: $secondarycolor.white
     // top: calc(100vh - 100px)
+    padding-top: 8px
     padding-bottom: 8px
     padding-bottom: calc(8px + constant(safe-area-inset-bottom))
     padding-bottom: calc(8px + env(safe-area-inset-bottom))

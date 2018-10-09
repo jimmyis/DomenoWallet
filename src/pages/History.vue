@@ -151,7 +151,7 @@
           border-bottom: 2px solid $primarycolor.green
           color: $primarycolor.green
 .swiper-container
-  background: $primarycolor.green
+  background: $primarycolor.darkgreen
   height: 46px
   margin: 0 !important
   min-height:42px !important
@@ -160,7 +160,10 @@
   height: 100%;
   opacity: 0.6;
   margin-top:6px
+  color: $primarycolor.white
 .swiper-slide-active 
   opacity: 1;
   font-weight 600 
+  color: $primarycolor.white
+  
 </style>

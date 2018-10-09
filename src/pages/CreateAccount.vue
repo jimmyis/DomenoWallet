@@ -11,7 +11,7 @@
     </toolbar>
     <div class="content">
       <v-text-field
-              dark
+              light
               name="name"
               :label="$t('Account.AccountName')"
               v-model="name"
@@ -20,7 +20,7 @@
               :append-icon-cb="this.chooseName"
             ></v-text-field>  
       <v-text-field
-              dark
+              light
               name="password"
               :label="$t('Account.Password')"
               v-model="password"
@@ -30,7 +30,7 @@
               required
             ></v-text-field>
       <v-text-field
-              dark
+              light
               :label="$t('Account.ConfirmPassword')"
               v-model="repassword"
               :append-icon="repwdvisible ? 'visibility' : 'visibility_off'"

@@ -142,7 +142,7 @@ export default {
 @require '~@/stylus/color.styl';
 
 .page {
-  background: $primarycolor.gray;
+  background: none
   color: $primarycolor.font;
   font-size: 16px;
 

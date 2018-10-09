@@ -143,7 +143,7 @@ export default {
 @require '~@/stylus/color.styl'
 .card-content
   padding: 8px 8px 0px 8px
-  background-color:$secondarycolor.gray
+  background-color:$secondarycolor.white
   .label
     font-size: 14px
     color: $secondarycolor.font

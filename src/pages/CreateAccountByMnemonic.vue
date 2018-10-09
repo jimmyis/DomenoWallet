@@ -11,7 +11,7 @@
     </toolbar>
     <div class="content">
       <v-text-field
-              dark
+              light
               name="name"
               :label="$t('Account.AccountName')"
               v-model="name"
@@ -20,7 +20,7 @@
               :append-icon-cb="this.chooseName"
             ></v-text-field>
       <v-text-field
-              dark
+              light
               name="password"
               :label="$t('Account.Password')"
               v-model="password"
@@ -30,7 +30,7 @@
               required
             ></v-text-field>
       <v-text-field
-              dark
+              light
               :label="$t('Account.ConfirmPassword')"
               v-model="repassword"
               :append-icon="repwdvisible ? 'visibility' : 'visibility_off'"
@@ -47,10 +47,10 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap v-else>
-        <v-flex xs6 @click="goback">
+        <v-flex class="button" xs6 @click="goback">
           <span>{{$t('Return')}}</span>
         </v-flex>
-        <v-flex xs6 @click="nextStep">
+        <v-flex class="button" xs6 @click="nextStep">
           <span :class="nextStepClass">{{$t('NextStep')}}</span>
         </v-flex>
        </v-layout>  
@@ -159,7 +159,7 @@ export default {
   bottom: constant(safe-area-inset-bottom)
   bottom: env(safe-area-inset-bottom)
   padding: 20px 20px
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   border-radius:5px
   margin:5px 5px 50px 5px
 .footer
@@ -176,6 +176,9 @@ export default {
   font-size:16px
   text-align:center
   color:$primarycolor.green
+  .button
+    color: $secondarycolor.white!important
+    background: $primarycolor.darkgreen
 .btn-available
   color:$primarycolor.green
 .btn-unavailable

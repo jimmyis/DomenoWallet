@@ -15,7 +15,7 @@
             {{$t('Error.NoContactYet')}}
           </div>
           <div class='contacts' v-else>
-            <v-text-field append-icon="search" v-model="search" dark 
+            <v-text-field append-icon="search" v-model="search" light 
                           class="search"  hide-details single-line >
             </v-text-field>
             <div class="contracts-list">
@@ -139,7 +139,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   overflow-y: auto
@@ -149,6 +149,9 @@ export default {
       padding-left 15px
       padding-right 15px
       box-shadow 0
+      min-height: 50px;
+      text-align: center;
+      padding-top: 10px!important;
       -webkit-box-shadow 0
 
 .contacts

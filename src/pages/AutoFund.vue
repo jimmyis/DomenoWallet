@@ -148,7 +148,6 @@ export default {
               backButtonCanClose: false,
               // hidden: true
           })
-          
       }
 
       this.appInstance.addEventListener('loadstop',() => {
@@ -264,6 +263,8 @@ export default {
 
 <style lang="stylus" scoped>
 @require '~@/stylus/trade.styl'
+.autofund
+  background: $secondarycolor.white
 .app-card
   background: $secondarycolor.gray
 .app-title

@@ -12,10 +12,10 @@
     </div>
     <div class="footer">
        <v-layout row wrap>
-        <v-flex xs6 @click="importAccount">
+        <v-flex class="button" xs6 @click="importAccount">
           <span>{{$t('ImportAccount')}}</span>
         </v-flex>
-        <v-flex xs6  @click="createAccount">
+        <v-flex class="button" xs6  @click="createAccount">
           <span>{{$t('CreateAccount')}}</span>
         </v-flex>
        </v-layout>  
@@ -71,8 +71,8 @@ export default {
     text-align: center
     vertical-align: center
     .logo-img
-      width: 120px
-      height:156px
+      width: 200px
+      height:auto
   .logo-title
     text-align: center
     height: 60px
@@ -91,13 +91,18 @@ export default {
     left: 0
     right: 0
     z-index: 99
-    // background: $secondarycolor.green
+    background: $primarycolor.darkgreen!important
+    color: $secondarycolor.white
     font-size: 16px
     text-align: center
     padding-top: 8px
     padding-bottom: 8px
     padding-bottom: constant(safe-area-inset-bottom)
     padding-bottom: env(safe-area-inset-bottom)
-
+    .button
+      background: $primarycolor.darkgreen!important
+      padding-top: 8px
+      padding-bottom: 8px
+      
 
 </style>

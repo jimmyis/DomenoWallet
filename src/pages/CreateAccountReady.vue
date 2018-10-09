@@ -187,7 +187,7 @@ export default {
       dialog: false,
       guide:0,
       primary: 'primary',
-      secondary: 'blue',
+      secondary: 'green',
 
       coveringDlg: false,
       working: false,
@@ -441,7 +441,7 @@ export default {
   bottom:  constant(safe-area-inset-bottom)
   bottom: env(safe-area-inset-bottom)
   padding: 20px 20px
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   border-radius:10px
   margin:7px 7px 50px 7px
   .label
@@ -468,12 +468,12 @@ export default {
   left:0
   right:0
   z-index:99
-  background:$primarycolor.gray
+  background:$primarycolor.darkgreen
   height:42px
   line-height:42px
   font-size:16px
   text-align:center
-  color:$primarycolor.green
+  color:$secondarycolor.white
 .btn-available
   color:$primarycolor.green
 .btn-unavailable
@@ -552,7 +552,7 @@ export default {
 .dlg-green
   color: $primarycolor.green
 .dlg-content
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
 
 .si-dlg
   position: fixed

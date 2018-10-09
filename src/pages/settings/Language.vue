@@ -93,13 +93,13 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   .content
     padding: 5px 5px
     .mycard
-        background-color:$secondarycolor.gray
+        background-color:$secondarycolor.white
       .card-content
         .lang
           padding-top: 10px

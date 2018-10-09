@@ -128,7 +128,7 @@
   @require '~@/stylus/color.styl'
 .infocard
   text-algin: center
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
    
   .history-li
     padding-top: 5px
@@ -145,4 +145,5 @@
     color: $primarycolor.red
   .loadmore
     padding-top: .3rem
+
 </style>

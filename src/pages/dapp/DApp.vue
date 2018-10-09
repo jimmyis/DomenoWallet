@@ -1,6 +1,6 @@
 // 第三方应用列表界面
 <template>
-  <div class="page" dark  v-bind:class="{hidebackground: showScanner}">
+  <div class="page" light v-bind:class="{hidebackground: showScanner}">
     <toolbar :title="$t('Title.ThirdApp')" :showbackicon="false"  @goback="back" 
       :shadow="false" lockpass  ref="toolbar" v-if="!showScanner">
       <!--右侧打开设置界面-->
@@ -41,7 +41,7 @@
         >
           <v-card flat tile class="pa-2 textcenter app-card" >
              <div class="pa-3">
-                <v-avatar class="grey darken-4 app-avatar" :size="`100%`">
+                <v-avatar class="app-avatar" :size="`100%`">
                  <img :src="app.image">
                 </v-avatar>
              </div>
@@ -65,7 +65,7 @@
         >
           <v-card dark flat tile class="pa-2 textcenter app-card" >
             <div class="pa-3">
-              <v-avatar class="grey darken-4 app-avatar" :size="`62px`">
+              <v-avatar class="app-avatar" :size="`62px`">
                <span class="white--text headline">{{app.title.substring(0,1)}}</span> 
              </v-avatar>
             </div>
@@ -81,7 +81,7 @@
         >
           <v-card dark flat tile class="pa-2 textcenter app-card mt-3" >
             <div class="pa-3">
-              <v-avatar class="grey darken-4 app-avatar add-app-avatar" :size="`62px`">
+              <v-avatar class="app-avatar add-app-avatar" :size="`62px`">
                <v-icon :size="`38px`" color="primary">add</v-icon>
              </v-avatar>
             </div>
@@ -108,16 +108,15 @@
 
     <!--新增弹窗-->
     <v-dialog v-model="showAddDlg" persistent max-width="90%">
-      <v-card>
+      <v-card class="add-custom-dapp-card">
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-              
               <v-flex xs12 sm6 md4>
-                <v-text-field :label="$t('ContactAdd.name')" clearable required v-model="apptitle"></v-text-field>
+                <v-text-field light :label="$t('ContactAdd.name')" clearable required v-model="apptitle"></v-text-field>
               </v-flex>
               <v-flex xs12 sm6 md4>
-                <v-text-field :label="$t('ContactAdd.address')" clearable required v-model="appsite"></v-text-field>
+                <v-text-field light :label="$t('ContactAdd.address')" clearable required v-model="appsite"></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -666,6 +665,7 @@ export default {
   overflow: hidden
   white-space: nowrap
   font-size: 14px
+  color: $primarycolor.darkgreen
 .card-content
   padding: 20px 10px
 .t2
@@ -675,28 +675,57 @@ export default {
 .dlg-green
   color: $primarycolor.green
 .dlg-content
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   color: $primarycolor.red
+  text-align: center
 
 .server-apps-layout
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
+  // background: $secondarycolor.gray
+  box-shadow: 1px 2px 6px #ddd
   margin: 8px 8px!important
   border-radius: 5px
 
 .apps-layout
-  background: $secondarycolor.gray
+  background: $secondarycolor.verylightgray
+  box-shadow: 1px 2px 6px #ddd
   margin: 8px 8px!important
   border-radius: 5px
 .app-card
-  background: $secondarycolor.gray!important
+  background: $secondarycolor.white!important
+  width: 100%;
 .app-card-wrapper
-  border: 1px solid $primarycolor.gray!important
+  border: 1px solid $primarycolor.verylightgreen!important
+  background: $secondarycolor.white!important
 .app-avatar
+  background: $primarycolor.darkgreen!important
   border-radius: 50%!important
+  padding-bottom: 100% !important;
+  padding-right: 100% !important;
+  margin: 25px auto;
+  overflow: hidden;
+  position: relative;
+  img, i
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: auto;
 .dapp-subtitle
   color: $secondarycolor.font
 .add-app-avatar
-  background: $secondarycolor.gray!important
+  background: $secondarycolor.green!important
+  i
+    color: $primarycolor.white!important
+.avatar-div
+  .avatar
+    width: 100px!important
+    height: 100px!important
 .hidebackground
   background: none!important
+
+.add-custom-dapp-card
+  background: $secondarycolor.white!important
+
 </style>

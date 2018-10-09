@@ -29,7 +29,7 @@
       <card class="mytrade" padding="10px 10px">
         <div class="card-content" slot="card-content">
           
-          <v-text-field  dark required  clearable hide-details v-bind:style="'width: 100% !important'"
+          <v-text-field light required  clearable hide-details v-bind:style="'width: 100% !important'"
             :prefix="$t('Trade.UnitPrice')" 
             v-model='price'
             type="number"
@@ -39,7 +39,7 @@
             :color="isBuy ? 'primary':'error'"
           ></v-text-field>
           <!--数量-->
-          <v-text-field  dark required hide-details clearable  v-bind:style="'width: 100% !important'"
+          <v-text-field light required hide-details clearable  v-bind:style="'width: 100% !important'"
             :prefix="$t('Amount')"
             v-model="amount"  
             @input="inputAmount"
@@ -50,7 +50,7 @@
             ></v-text-field>
           <v-slider hide-details 
             class="buy-amount-slider"
-            dark
+            light
             max=100 step=10 ticks
             v-model="num"
             @input="inputNum"
@@ -59,7 +59,7 @@
             :color="isBuy ? 'primary':'error'"
             ></v-slider>
           <!--总额，自动计算-->
-          <v-text-field   name="total" dark
+          <v-text-field name="total" light
             :prefix="$t('Trade.Total')"
             :suffix="CounterBalance.code"
             v-model="total"
@@ -159,7 +159,7 @@
     <div class="confirm-wrapper"  v-if="showConfirmSheet">
       <div class="confirm-blank"></div>
       <div  class="confirm-dlg">
-      <v-bottom-sheet v-model="showConfirmSheet"  dark>
+      <v-bottom-sheet v-model="showConfirmSheet"  light>
         <div class="confirm-title" v-if="flag === 'buy'">{{$t('Trade.Confirm')}}{{$t('Trade.Buy')}}</div>
         <div class="confirm-title" v-else>{{$t('Trade.Confirm')}}{{$t('Trade.Sell')}}</div>
         <div class="confirm-content">

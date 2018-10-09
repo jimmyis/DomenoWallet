@@ -4,7 +4,7 @@
 <template>
   <div class="cp-toolbar">
 
-    <v-toolbar  dark :class="color" :flat="!shadow" dense :clipped-left='true' app>
+    <v-toolbar light :class="color" :flat="!shadow" dense :clipped-left='true' app>
       <v-btn icon v-if="showbackicon" @click="back" class="white--text">
             <v-icon class="back-icon font28">&#xE5CB;</v-icon>
       </v-btn>
@@ -22,7 +22,7 @@
     </v-toolbar>
 
 
-    <v-bottom-sheet persistent v-model="showPwdSheet" v-if="showPwdSheet" dark>
+    <v-bottom-sheet persistent v-model="showPwdSheet" v-if="showPwdSheet"light>
       <div class="sheet-content">
         <div class="sheet-title">
           <h4 class="title" v-if="!lockpass">
@@ -44,7 +44,7 @@
                 :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                 :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                 :type="pwdvisible ? 'text':'password'"
-                required dark
+                required light
               ></v-text-field>
         </div>
         <div  class="sheet-btns">
@@ -138,7 +138,7 @@ export default {
     }),
     changetheme(color){
       if (color=== 'ui'){
-        this.$vuetify.theme.primary = '#21ce90'
+        this.$vuetify.theme.primary = '#00b900'
       }else{
         this.$vuetify.theme.primary = 'red'
       }
@@ -297,7 +297,7 @@ export default {
   flex:1
 
 .sheet-content
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   color: $primarycolor.font
   padding: 10px 10px
   word-wrap: break-word
@@ -310,9 +310,10 @@ export default {
       color: $primarycolor.green
       padding: 10px 10px
     .label
-      color: $secondarycolor.font
+      color: $secondarycolor.green
     .value
       font-size: 16px
+
   .sheet-btns
     margin-top: 10px
     display: inline-block

@@ -15,7 +15,7 @@
 				<div class="key" @touchstart="onChange('9')">9</div>
         <div class="key">&nbsp;</div>
 				<div class="key" @touchstart="onChange('0')">0</div>
-				<div class="key"@touchstart="onDelete('')">
+				<div class="key" @touchstart="onDelete('')">
 					<i class="material-icons">&#xE14A;</i>
 				</div>
 			</div>

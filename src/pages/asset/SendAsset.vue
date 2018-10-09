@@ -54,7 +54,7 @@
             name="amount"
             :label="$t('Amount')"
             v-model="amount"
-            dark
+            light
             :color="'error'"
             :suffix="selectedasset.code"
             required
@@ -66,7 +66,7 @@
             <!-- <v-slider v-model="num"
                 class="amount-slider"
                 color="red"
-                dark
+                light
                 :max="asset.balance"
                 @input="numInput"
                 step=1
@@ -78,7 +78,7 @@
             :append-icon-cb="contactsview"
             v-model="destination"
             class="selectasset"
-            dark
+            light
             :color="'error'"
             required
             @input="destinationInput"
@@ -94,7 +94,7 @@
             :label="$t('ContactAdd.name')"
             v-model="contactname"
             class="selectasset"
-            dark
+            light
             disabled
             hide-details
           ></v-text-field>
@@ -104,12 +104,12 @@
             <v-flex class="memoswitch">{{$t('Memo')}}</v-flex>
           </v-flex>
           <v-flex xs2 offset-xs8>
-          <v-switch style="padding-left:25px;margin-top: 18px;"  v-model="memoswitch" dark error hide-details	color="error"/>
+          <v-switch style="padding-left:25px;margin-top: 18px;"  v-model="memoswitch" light error hide-details	color="error"/>
           </v-flex>
           </v-layout>
           <div v-if="memoswitch">
             <v-select v-bind:items="memotypes" v-model="memotype"
-                      :label="$t('MemoType')" dark
+                      :label="$t('MemoType')" light
                       v-on:input='onMemoTypeInput()'
                       :color="'error'"
             />
@@ -118,7 +118,7 @@
               :label="$t('MemoContent')"
               v-model="memo"
               :color="'error'"
-              dark
+              light
               type="text"
               append-icon="bookmark"
               :append-icon-cb="()=>{showmemobook=true}"
@@ -145,7 +145,7 @@
     <contact-book v-show="showmemobook" :data="memobookdata" :close="()=>{showmemobook=false}" :ok="selectmemo"/>
       
       <div v-if="is_sendconfim" class="sendconfim_bottom_sheet">
-        <v-bottom-sheet  v-model="is_sendconfim" dark>
+        <v-bottom-sheet  v-model="is_sendconfim" light>
             <v-container class="v_container">
               <v-layout>
                   <v-flex xs12>
@@ -644,7 +644,7 @@ export default {
 @require '~@/stylus/color.styl'
 
 .sendconfim_bottom_sheet
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   height:400px
   height: calc(400px +  constant(safe-area-inset-bottom))
   height: calc(400px +  env(safe-area-inset-bottom))
@@ -740,7 +740,7 @@ export default {
   //bottom: 0
   //left: 0
   //right: 0
-  background: $primarycolor.gray
+  background: $secondarycolor.white
   color: $primarycolor.font
   display flex
   flex-direction column
@@ -749,10 +749,10 @@ export default {
   .toolbar-ico
     .iconfont
       font-size: 24px
-      color: $primarycolor.font
+      color: $secondarycolor.white
     .material-icons
       font-size: 24px
-      color: $primarycolor.font
+      color: $secondarycolor.white
 .card-content
   padding: 8px 8px
   .label

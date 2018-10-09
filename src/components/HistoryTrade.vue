@@ -259,4 +259,6 @@ import { isNativeAsset } from '@/api/assets'
   font-size: .6rem
 .over-hide
   overflow: hidden
+.search-wrapper
+  background: $primarycolor.darkgreen
 </style>

@@ -6,7 +6,7 @@
     <div class="confirm-wrapper" v-show="step === 0">
       <div class="confirm-blank"></div>
       <div  class="confirm-dlg">
-      <v-bottom-sheet v-model="showSendDlg" persistent dark>
+      <v-bottom-sheet v-model="showSendDlg" persistent light>
         <div class="send-dlg-content sheet-content">
           <div class="menu-head">
             <div class="menu-row">
@@ -67,7 +67,7 @@
     </div>
 
     <!--显示密码输入界面-->
-    <v-bottom-sheet persistent v-model="showPwdSheet" v-if="showPwdSheet" dark>
+    <v-bottom-sheet persistent v-model="showPwdSheet" v-if="showPwdSheet" light>
       <div class="sheet-content send-dlg-content">
         <div class="sheet-title textcenter">
           <div class="title">{{$t('payment')}} {{choosed.amount}}  {{choosed.code}}</div>
@@ -84,7 +84,7 @@
                 :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                 :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                 :type="pwdvisible ? 'text':'password'"
-                required dark
+                required light
               ></v-text-field>
         </div>
         <div  class="sheet-btns">

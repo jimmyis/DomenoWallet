@@ -1,7 +1,7 @@
 <template>
 <div>
 
-  <v-app :class="'app ' + (showFuzzyView?'fuzzy-app':'')  + (isios ? ' ios-app ':' ' )" dark>
+  <v-app :class="'app ' + (showFuzzyView?'fuzzy-app':'')  + (isios ? ' ios-app ':' ' )" light>
       <v-system-bar status :color="iosstatusbarcolor" v-if="isios && !isFull" app>
         <v-spacer></v-spacer>
       </v-system-bar>
@@ -21,7 +21,7 @@
           <div class="a-t1 a-red textcenter" v-if="updating">{{$t('UpdateHint')}}</div>
           <div class="a-t1 a-red textcenter" v-if="!updating">{{$t('FindNewVersion',[latestVersion])}}</div>
           <div class="a-btns flex-row" v-if="!updating">
-            <div class="flex1 a-red textcenter" @click="doUpdate">{{$t('Update')}}</div>
+            <div class="flex1 a-green textcenter" @click="doUpdate">{{$t('Update')}}</div>
             <div class="flex1 a-red textcenter" @click="updateConfirmDlg = false">{{$t('Button.Cancel')}}</div>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default {
       navigator.splashscreen.hide();
       if (StatusBar && !StatusBar.isVisible) {
         StatusBar.show();
-        StatusBar.backgroundColorByHexString("#21ce90");
+        StatusBar.backgroundColorByHexString("#009b00");
         this.$store.commit("CHANGE_IOSSTATUSBAR_COLOR", "primary");
       }
       //加载系统配置
@@ -239,7 +239,7 @@ export default {
     //每小时执行一次
     this.messagesInterval = setInterval(()=>{
       this.getMessages()
-    }, 3600000)    
+    }, 3600000)
   },
   destroyed() {
       clearInterval(this.messagesInterval)
@@ -304,15 +304,17 @@ export default {
 };
 </script>
 <style lang="stylus">
+@import url('https://fonts.googleapis.com/css?family=Prompt');
 @require './stylus/app.styl';
+@require './stylus/color.styl';
 
 .app {
-  background-color: $primarycolor.gray;
+  background-color: $secondarycolor.white;
 }
 
 .bg-hide {
-  background: none;
-  background-color: transparent;
+  background: $primarycolor.green;
+  // background-color: transparent;
 }
 
 .loading {
@@ -409,13 +411,15 @@ export default {
 
 .a-card-content
   padding: 20px 10px
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
 .a-t1
   font-size: 20px
   padding-top: 5px
   padding-bottom: 5px
 .a-red
   color: $primarycolor.red
+.a-green
+  color: $primarycolor.green
 .a-btns
   font-size: 16px
 
@@ -437,14 +441,17 @@ export default {
     color:#f35530;
   }
   .app.application.theme--dark{
-    background: #212122;
+    // background: #212122;
+    background: #009b00;
+    // background: #edfff0;
+    // background: $primarycolor.verylightgreen;
   }
   .app.application.theme--dark.bg-hide{
     background: none;
     background-color:transparent;
   }
   .application{
-    font-family:  "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family:  "Prompt", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   }
   .application--light .input-group:not(.input-group--error):not(.input-group--focused):not(.input-group--disabled) .input-group__input .input-group__append-icon{
     color:#FFF;
@@ -454,7 +461,8 @@ export default {
   }
   .amount-slider.input-group.input-group--slider .input-group__input .slider .slider__track__container .slider__track-fill,
 .amount-slider.input-group.input-group--slider .input-group__input .slider .slider__thumb-container .slider__thumb{
-    background: #f35833;
+    // background: #f35833;
+    background: #009b00;
   }
   @supports (bottom: constant(safe-area-inset-bottom)) {
     .footer {

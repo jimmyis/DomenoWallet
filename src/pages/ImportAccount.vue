@@ -30,7 +30,7 @@
         <secret-key-input :enablePaste="true" :seed="scanSeed" ref="secretkeyRef"></secret-key-input>
       </div>
       <div v-if="importFlag === 0">
-        <v-text-field dark
+        <v-text-field light
             :label="$t('mnemonic')"
             v-model="mnemonic"
             required
@@ -41,11 +41,11 @@
             rows=3
             ></v-text-field>
         <!--显示语言，用户可以选择-->
-        <div class="lang-tabs pt-1 pb-1">
-          <span :class="'tab pa-1 ma-1' + ( lang ==='english' ? ' active':'' )" @click="changeLang(english.lang)">{{english.label}}</span>
-          <span :class="'tab pa-1 ma-1' + ( lang ==='chinese_simplified' ? ' active':'' )" @click="changeLang(chinese_simplified.lang)">{{chinese_simplified.label}}</span>
-          <span :class="'tab pa-1 ma-1' + ( lang ==='chinese_traditional' ? ' active':'' )" @click="changeLang(chinese_traditional.lang)">{{chinese_traditional.label}}</span>
-        </div>
+        <!-- <div class="lang-tabs pt-1 pb-1"> -->
+          <!-- <span :class="'tab pa-1 ma-1' + ( lang ==='english' ? ' active':'' )" @click="changeLang(english.lang)">{{english.label}}</span> -->
+          <!-- <span :class="'tab pa-1 ma-1' + ( lang ==='chinese_simplified' ? ' active':'' )" @click="changeLang(chinese_simplified.lang)">{{chinese_simplified.label}}</span> -->
+          <!-- <span :class="'tab pa-1 ma-1' + ( lang ==='chinese_traditional' ? ' active':'' )" @click="changeLang(chinese_traditional.lang)">{{chinese_traditional.label}}</span> -->
+        <!-- </div> -->
         <!--根据mnemonic生成的密钥，用户可以点击确定用哪个-->
         <div class="seeds" v-if="genSeed">
           <span class="mt-2 mb-2 seed-span">{{genSeed}}</span>
@@ -259,7 +259,7 @@ export default {
   bottom:  constant(safe-area-inset-bottom)
   bottom:  env(safe-area-inset-bottom)
   padding: 20px 20px
-  background: $primarycolor.gray
+  background: $secondarycolor.white
 .right
   .toolbar-ico
     .iconfont
@@ -276,14 +276,14 @@ export default {
   left: 0
   right: 0
   z-index: 99
-  background: $secondarycolor.gray
+  background: $primarycolor.darkgreen
   height: 42px
-  line-height: 42px
+  line-height: 40px
   font-size: 16px
   text-align: center
-  color: $primarycolor.green
+  color: $secondarycolor.white
 .btn-available
-  color: $primarycolor.green
+  color: $secondarycolor.white
 .btn-unavailable
   color: $secondarycolor.green
 .hidebackground

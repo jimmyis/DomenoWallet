@@ -27,6 +27,8 @@ export default {
   -moz-box-shadow:2px 2px 20px $primarycolor.gray
   -webkit-box-shadow:2px 2px 20px $primarycolor.gray
   box-shadow:2px 2px 20px $primarycolor.gray
+  background: $secondarycolor.white
+  color: $primarycolor.font
   
 .asset_card_f-card
   height:320px

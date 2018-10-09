@@ -32,9 +32,9 @@
           <scroll :refresh="reloadTradePairs" :readLabelTxt="readLabelTxt">
 
             <v-tabs  v-model="tagIndex" class="tabs-bg-dark" hide-slider grow color="transparent">
-              <v-tab class="tab1" @click="doFilter(item)" 
+              <v-tab class="tab-button" @click="doFilter(item)" 
                 v-for="(item,index) in allTags" :key="index">
-                  {{allTagsLabel[index]}}
+                  <span class="tab-button-item">{{allTagsLabel[index]}}</span>
               </v-tab>
             <v-tab-item v-for="(item,index) in allTags" :key="index">
               <ul class="tradepairs-ul">
@@ -553,7 +553,8 @@ export default {
 .trade-card-content
   // border: 1px solid $secondarycolor.gray
   padding: 5px 5px
-  background: $primarycolor.gray
+  background: $primarycolor.white
+  box-shadow: 1px 1px 8px #bbb
   border-radius: 5px
 .tradepairs-ul
   padding: 0px 0px
@@ -565,7 +566,7 @@ export default {
     z-index: 2
     padding: 2px 2px 
     padding-bottom: 0px
-    background: $secondarycolor.gray
+    // background: $secondarycolor.gray
     width: 100%
     overflow:hidden
     .from-wrapper
@@ -607,7 +608,7 @@ export default {
 
 .tradepair-li
   border-bottom: 1px solid $secondarycolor.font
-  background: $primarycolor.gray
+  background: $secondarycolor.white
 .tradepair-li:last-child
   border-bottom: 0px
 .operate-box 
@@ -672,5 +673,14 @@ export default {
   transition: 0.3s
 .filter-tag.active
   color: $primarycolor.green
+.tab-button {
+  background: $primarycolor.darkgreen 
+}
+.tab-button-item {
+  color: $primarycolor.white!important
+}
+.tab-button-item.tabs__item--active {
+  color: $primarycolor.white!important
+}
 </style>
 

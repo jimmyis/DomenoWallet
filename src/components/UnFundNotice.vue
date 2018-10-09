@@ -139,27 +139,31 @@ export default {
   bottom: 0
   left: 0
   right: 0
-  background #333
+  background: $primarycolor.white
   opacity: 0.5
   z-index: 9
   padding-bottom: 1rem
   padding-bottom: calc(1rem + constant(safe-area-inset-bottom))
   padding-bottom: calc(1rem + env(safe-area-inset-bottom))
+  transition-duration: 0.2s
 .unfund-dlg
   position: fixed
   bottom: 0
   left: 0
   right: 0
   // height: 5rem
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
+  color: $primarycolor.red
   z-index:10
+  box-shadow: 0 -4px 8px rgba(140, 140, 140, 0.5)
+  transition-duration: 0.4s
 
 .close-icon
-  color: $primarycolor.green
+  color: $primarycolor.red
   font-size: 24px
   padding-right: .2rem
 .ud-title
-  color: $primarycolor.font
+  color: $primarycolor.red
   font-size: 24px
 .ud-hint
   font-size: 12px

@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap class="date-picker">
       <v-flex xs5>
         <v-dialog
           ref="startDlg"
@@ -130,6 +130,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+@require '~@/stylus/color.styl';
+.date-picker
+  background: $primarycolor.white
 
 </style>

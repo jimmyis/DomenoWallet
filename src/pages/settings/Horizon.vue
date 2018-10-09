@@ -15,12 +15,12 @@
               name="horizon"
               :label="$t('PublicNetUrl')"
               v-model="horizon"
-              dark
+              light
             ></v-text-field>
 
             <v-container fluid grid-list-md>
             <v-layout row wrap>
-              <v-flex d-flex xs12 sm6 md3 @click="changeHorizon(fchain)">
+              <!-- <v-flex d-flex xs12 sm6 md3 @click="changeHorizon(fchain)">
                   <v-flex d-flex xs11>
                     <v-layout row wrap>
                       <v-flex d-flex xs12 class='label'>{{$t('fchainHorizon')}}</v-flex>
@@ -31,13 +31,13 @@
                     <i class="iconfont horizon icon-dot1" v-if="horizon === fchain"></i>
                     <i class="iconfont horizon icon-dot" v-else></i>
                   </v-flex>
-              </v-flex>
-               <v-flex class="tag-wrapper" xs12 v-if="horizon_version_fchain!=null">
+              </v-flex> -->
+               <!-- <v-flex class="tag-wrapper" xs12 v-if="horizon_version_fchain!=null">
                 <span :class="{horizon_timeusestyle:true, horizon_timeusebgcone:timeUse_fchain<=50,horizon_timeusebgctwo:timeUse_fchain<=100&&timeUse_fchain>50,horizon_timeusebgcthree:timeUse_fchain<=150&&timeUse_fchain>100,horizon_timeusebgcfour:timeUse_fchain<=200&&timeUse_fchain>150,horizon_timeusebgcfive:timeUse_fchain>=200}">{{timeUse_fchain}}ms</span>
                 <span class="horizon_msgstyle">{{$t('HorizonVersion')}}:{{horizon_version_fchain}}</span>
-              </v-flex>
+              </v-flex> -->
 
-              <v-flex d-flex xs12 sm6 md3 @click="changeHorizon(stellar)">
+              <!-- <v-flex d-flex xs12 sm6 md3 @click="changeHorizon(stellar)">
                   <v-flex d-flex xs11>
                     <v-layout row wrap>
                       <v-flex d-flex xs12 class='label'>{{$t('StellarOrg')}}</v-flex>
@@ -48,25 +48,25 @@
                     <i class="iconfont horizon icon-dot1" v-if="horizon === stellar"></i>
                     <i class="iconfont horizon icon-dot" v-else></i>
                   </v-flex>
-              </v-flex>
-              <v-flex class="tag-wrapper" xs12 v-if="this.horizon_version_stellar!=null">
+              </v-flex> -->
+              <!-- <v-flex class="tag-wrapper" xs12 v-if="this.horizon_version_stellar!=null">
                 <span :class="{horizon_timeusestyle:true, horizon_timeusebgcone:timeUse_stellar<=50,horizon_timeusebgctwo:timeUse_stellar<=100&&timeUse_stellar>50,horizon_timeusebgcthree:timeUse_stellar<=150&&timeUse_stellar>100,horizon_timeusebgcfour:timeUse_stellar<=200&&timeUse_stellar>150,horizon_timeusebgcfive:timeUse_stellar>=200}">{{timeUse_stellar}}ms</span>
                 <span class="horizon_msgstyle">{{$t('HorizonVersion')}}:{{horizon_version_stellar}}</span>
-              </v-flex>
-               <v-flex d-flex xs12 sm6 md3  @click="changeHorizon(chinapublic)" >
-                  <v-flex d-flex xs11>
-                    <v-layout row wrap>
-                      <v-flex d-flex xs12 class='label'>{{$t('ChinaPublic')}}</v-flex>
-                      <v-flex d-flex xs12 class='value'>{{chinapublic}}</v-flex>
-                    </v-layout>
-                  </v-flex>
-                  <v-flex xs1 class="select">
-                    <i class="iconfont horizon icon-dot1" v-if="horizon === chinapublic"></i>
-                    <i class="iconfont horizon icon-dot" v-else></i>
-                  </v-flex>
-              </v-flex>
+              </v-flex> -->
+              <!-- <v-flex d-flex xs12 sm6 md3  @click="changeHorizon(chinapublic)" >
+                <v-flex d-flex xs11>
+                  <v-layout row wrap>
+                    <v-flex d-flex xs12 class='label'>{{$t('ChinaPublic')}}</v-flex>
+                    <v-flex d-flex xs12 class='value'>{{chinapublic}}</v-flex>
+                  </v-layout>
+                </v-flex>
+                <v-flex xs1 class="select">
+                  <i class="iconfont horizon icon-dot1" v-if="horizon === chinapublic"></i>
+                  <i class="iconfont horizon icon-dot" v-else></i>
+                </v-flex>
+              </v-flex> -->
               
-              <v-flex class="tag-wrapper" xs12 v-if="this.horizon_version_chinapublic!=null">
+              <!-- <v-flex class="tag-wrapper" xs12 v-if="this.horizon_version_chinapublic!=null">
                 <span :class="{horizon_timeusestyle:true, 
                     horizon_timeusebgcone:timeUse_chinapublic<=50,
                     horizon_timeusebgctwo:timeUse_chinapublic<=100&&timeUse_chinapublic>50,
@@ -74,7 +74,7 @@
                     horizon_timeusebgcfour:timeUse_chinapublic<=200&&timeUse_chinapublic>150,
                     horizon_timeusebgcfive:timeUse_chinapublic>=200}">{{timeUse_chinapublic}}ms</span>
                 <span class="horizon_msgstyle">{{$t('HorizonVersion')}}:{{horizon_version_chinapublic}}</span>
-              </v-flex>
+              </v-flex> -->
 
               <!--
               <v-flex d-flex xs12 sm6 md3 @click="changeHorizon(wancloud)">
@@ -113,7 +113,7 @@
 import Toolbar from '@/components/Toolbar'
 import Card from '@/components/Card'
 import { mapState, mapActions} from 'vuex'
-import { OFFICIAL_HORIZON,CHINA_HORIZON,WANCLOUD_HORIZON,FCHAIN_HORIZON } from '@/api/horizon'
+import { OFFICIAL_HORIZON } from '@/api/horizon'
  
 import { getAddressPinInfo } from '@/api/gateways'
 import * as accountapi from '@/api/account'
@@ -127,13 +127,13 @@ export default {
       working: false,
       horizon_version:[],
       horizon_version_stellar:null,
-      horizon_version_chinapublic:null,
-      horizon_version_wancloud:null,
-      horizon_version_fchain: null,
-      timeUse_fchain: null,
+      // horizon_version_chinapublic:null,
+      // horizon_version_wancloud:null,
+      // horizon_version_fchain: null,
+      // timeUse_fchain: null,
       timeUse_stellar:null,
-      timeUse_chinapublic:null,
-      timeUse_wancloud:null,
+      // timeUse_chinapublic:null,
+      // timeUse_wancloud:null,
     }
   },
   computed:{
@@ -145,15 +145,15 @@ export default {
     stellar(){
       return OFFICIAL_HORIZON
     },
-    chinapublic(){
-      return CHINA_HORIZON
-    },
-    wancloud(){
-      return WANCLOUD_HORIZON
-    },
-    fchain(){
-      return FCHAIN_HORIZON
-    }
+    // chinapublic(){
+    //   return CHINA_HORIZON
+    // },
+    // wancloud(){
+    //   return WANCLOUD_HORIZON
+    // },
+    // fchain(){
+    //   return FCHAIN_HORIZON
+    // }
   
   },
   beforeMount(){
@@ -249,7 +249,7 @@ export default {
   .iconfont
     font-size: .7rem
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   .content

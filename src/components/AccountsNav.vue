@@ -12,7 +12,7 @@
     <v-navigation-drawer
       absolute
       temporary
-      dark
+      light
       v-model="showview"
       class='aside'
      >
@@ -58,7 +58,7 @@
     </v-navigation-drawer>
       <!-- end 切换账户 -->
 
-    <v-bottom-sheet  v-model="showPwdSheet" v-if="showPwdSheet" dark>
+    <v-bottom-sheet  v-model="showPwdSheet" v-if="showPwdSheet" light>
       <div class="sheet-content">
         <div class="sheet-title">
           <h4 class="title">
@@ -80,7 +80,7 @@
                 :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                 :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                 :type="pwdvisible ? 'text':'password'"
-                required dark
+                required light
               ></v-text-field>
         </div>
         <div  class="sheet-btns">
@@ -250,7 +250,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .aside
-  background: $secondarycolor.gray !important
+  background: $primarycolor.white !important
   .divid
     background-color rgb(33,33,34)
     border: none
@@ -262,7 +262,7 @@ export default {
     display: block
     padding: 30px 10px
     width: 100%
-    background: $primarycolor.gray
+    background: $primarycolor.verylightgreen
     .menu-row
       float: left
       color: $primarycolor.font
@@ -273,10 +273,10 @@ export default {
       border-radius: 50px
       text-align: center
       vertical-align: middle
-      background: $secondarycolor.gray
+      background: $secondarycolor.darkgreen
       .avatar
         font-size: 24px
-        color: primary
+        color: $secondarycolor.white!important
     .menu-row-2
       padding: 5px 15px
       width: 68%
@@ -307,8 +307,9 @@ export default {
     .menu-row-3.active
       background: $secondarycolor.gray
  .showaccounts
-    background: $secondarycolor.gray
-    background: #29292b
+    background: $secondarycolor.white
+    // background: #eeeeee
+    // background: #29292b
     margin-top: -5px
     padding: 20px 20px
     color: $primarycolor.font
@@ -378,7 +379,7 @@ export default {
           display: inline-block
 
 .sheet-content
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
   color: $primarycolor.font
   padding: 10px 10px
   word-wrap: break-word

@@ -1,7 +1,7 @@
 //DAPP配置界面，用户可以自定义引用DAPP
 //显示所有自定义引用的第三方dapp
 <template>
-  <div class="page" dark>
+  <div class="page" light>
     <toolbar :title="$t('CustomDApp')" :showbackicon="true"  
       @goback="back" :shadow="false" lockpass  ref="toolbar">
       <v-btn icon slot='right-tool' @click="toAdd">

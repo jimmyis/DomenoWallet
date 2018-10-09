@@ -24,12 +24,12 @@
         <div class="card-content" slot="card-content">
           <ul class="settings-ul">
             <li class="settings-li">
-              <v-text-field name="input-name" required dark
+              <v-text-field name="input-name" required light
                             :label="$t(namelabel)" v-model="name"
               ></v-text-field>
             </li>
             <li class="settings-li">
-              <v-text-field name="input-address" required dark
+              <v-text-field name="input-address" required light
                             :label="$t(addlabel)" v-model='address'
               ></v-text-field>
             </li>
@@ -38,19 +38,19 @@
               <v-flex class="memoswitch">{{$t('Memo')}}</v-flex>
             </v-flex>
             <v-flex xs2 offset-xs8>
-            <v-switch style="padding-left:25px;padding-top:18px;"  v-model="memoswitch" dark color="primary" hide-details/>
+            <v-switch style="padding-left:25px;padding-top:18px;"  v-model="memoswitch" light color="primary" hide-details/>
             </v-flex>
             </v-layout>
             <div v-if="memoswitch">
               <v-select v-bind:items="memotypes" v-model="memotype"
-                        :label="$t('MemoType')" dark 
+                        :label="$t('MemoType')" light 
                         v-on:input='onMemoTypeInput()'
               /> 
               <v-text-field
                 name="memo"
                 :label="$t('MemoContent')"
                 v-model="memo"
-                dark 
+                light 
                 type="text"
                 :hint="$t('required')" 
                 required
@@ -81,7 +81,7 @@
       <v-footer v-if="!showScanner">        
         <v-layout row  wrap>
           <v-flex xs12>
-            <v-btn class='add'  block dark large @click="addContact">{{$t(buttonlabel)}}</v-btn>
+            <v-btn class='add'  block light large @click="addContact">{{$t(buttonlabel)}}</v-btn>
           </v-flex>
         </v-layout>  
       </v-footer>
@@ -257,7 +257,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   .content
     display flex
     flex-direction column
@@ -269,7 +269,8 @@ export default {
   width: 100%;
   background: transparent;
 .add
-  background-color #21ce90  !important
+  background-color: $secondarycolor.green!important
+  color: $secondarycolor.white!important
 .hidebackground
   background none
   background-color: transparent
@@ -277,10 +278,10 @@ export default {
   .toolbar-ico
     .iconfont
       font-size: 24px
-      color: $primarycolor.font
+      color: $primarycolor.white
     .material-icons
       font-size: 24px
-      color: $primarycolor.font
+      color: $primarycolor.white
 
 .memoswitch
   font-size:16px

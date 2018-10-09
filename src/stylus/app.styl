@@ -1,7 +1,8 @@
 // APP整体样式
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
+  // background: $primarycolor.white
   // padding-top: constant(safe-area-inset-top);
   // padding-bottom: constant(safe-area-inset-bottom);
 .content
@@ -87,17 +88,31 @@
   padding-bottom: 0
   padding-bottom: constant(safe-area-inset-bottom)
   padding-bottom: env(safe-area-inset-bottom)
+  
+.theme--dark .tabs__bar, .application .theme--dark.tabs__bar
+  background: $primarycolor.darkgreen!important
 
+.tabs__item
+  color: $primarycolor.darkgreen
+
+.tabs__item:hover
+  color: $primarycolor.white
+
+.tabs__item.tabs__item--active
+  color: $primarycolor.white
+
+.tabs
+  width: 100%
 
 @css {
   a:hover {
     text-decoration: none;
   }
   .theme--dark .tabs__bar, .application .theme--dark.tabs__bar{
-    background: #212122!important;
+    // background: #212122!important;
   }
   .tabs__item.tabs__item--active{
-    color: #21CE90!important;  
+    // color: #21CE90!important;  
   }
 
   .tabs__div .tabs__item{
@@ -107,14 +122,14 @@
     opacity: 1!important;
   }
   .tabs__div.tab2 .tabs__item{
-    color: #21CE90!important;  
+    // color: #21CE90!important;  
     opacity: 1!important;
   }
 }
 .tabs-bg-dark
-  background: $primarycolor.gray!important
+  background: $primarycolor.darkgreen!important
   .tabs-bar
-    background: $primarycolor.gray!important
+    background: $primarycolor.white!important
 
 .underline
   text-decoration: underline

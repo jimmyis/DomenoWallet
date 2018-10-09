@@ -5,7 +5,6 @@
       auto-height
       v-model="show"
       :timeout="0"
-      :color = 'color'
       >
         <div class='bottom-notice' v-if="text">{{ text }}</div>
         <div class="bottom-notice" v-else>
@@ -43,7 +42,8 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .bottom-notice
-  color: $primarycolor.green
+  color: $primarycolor.font
+  background: $secondarycolor.white
 .btn
     color: $primarycolor.green
 // .bn-snackbar
@@ -51,6 +51,10 @@ export default {
 //   padding-bottom: calc(8px + constant(safe-area-inset-bottom))!important
 //   padding-bottom: calc(8px + env(safe-area-inset-bottom))!important
 //   background-color: #303034!important
+.bn-snackbar
+  background: $secondarycolor.white
+  .snack__wrapper
+    background: none
 .snackbar-btn
   margin-top: 8px!important
 </style>

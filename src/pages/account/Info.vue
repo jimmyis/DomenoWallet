@@ -69,7 +69,7 @@
 
 
       <div class="pwdSheetWrapper" v-if="showPwdSheet">
-        <v-bottom-sheet  v-model="showPwdSheet"  dark>
+        <v-bottom-sheet  v-model="showPwdSheet"  light>
           <div class="sheet-content">
             <div class="sheet-input">
               <v-text-field
@@ -79,7 +79,7 @@
                     :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                     :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                     :type="pwdvisible ? 'text':'password'"
-                    required dark
+                    required light
                   ></v-text-field>
             </div>
             <div  class="sheet-btns">
@@ -99,37 +99,43 @@
                     :append-icon="pwdvisible ? 'visibility' : 'visibility_off'"
                     :append-icon-cb="() => (pwdvisible = !pwdvisible)"
                     :type="pwdvisible ? 'text':'password'"
-                    required dark
+                    required light
                   ></v-text-field> -->
-              <!-- <v-text-field   required dark>账户密钥为重要信息，请做好备份并谨慎保存，切勿与他人分享</v-text-field> -->
+              <!-- <v-text-field   required light>账户密钥为重要信息，请做好备份并谨慎保存，切勿与他人分享</v-text-field> -->
         <!-- </v-bottom-sheet>
       </div> -->
       <div class="text-xs-center" v-if="showViewkeySheet">
-          <v-bottom-sheet v-model="showViewkeySheet" dark>
+          <v-bottom-sheet v-model="showViewkeySheet" light>
             <v-list >
               <v-subheader class="info_warning_msg_style">{{$t("Warning_msg")}}</v-subheader>
               <v-subheader class="info_account_miyao_style">{{$t("Account_secretkey")}}</v-subheader>
               <v-subheader @click="copy(seed)"  class="info_showaccount_address_style">{{seed}}</v-subheader>
               <v-subheader class="info_showaccount_barcode_style">{{$t("Account_secretkeycode")}}</v-subheader>
               <qrcode class="info_qrcode_style" :text="qrtext" :callback="qrcodecallback" color="red"/>
-              <v-subheader class="info_account_close_style" @click="change_value0f_vk">{{$t("Close")}}</v-subheader>
+              <v-subheader class="info_account_close_style" @click="change_value0f_vk">
+                <span>{{$t("Close")}}</span>
+              </v-subheader>
             </v-list>
           </v-bottom-sheet>
       </div>
 
       <!-- 查看助记词 -->
        <div class="text-xs-center" v-if="showMnemonicSheet">
-          <v-bottom-sheet v-model="showMnemonicSheet" dark>
+          <v-bottom-sheet v-model="showMnemonicSheet" light>
             <v-list v-if="mnemonic">
               <v-subheader class="info_warning_msg_style">{{$t("Warning_mnemonic_msg")}}</v-subheader>
               <v-subheader class="info_account_miyao_style">{{$t("mnemonic")}}</v-subheader>
               <v-subheader @click="copy(mnemonic)"  class="info_showaccount_address_style">{{mnemonic}}</v-subheader>
               <qrcode class="info_qrcode_style" :text="qrmnemonictext" :callback="qrcodecallback" color="red"/>
-              <v-subheader class="info_account_close_style" @click="change_value0f_vk">{{$t("Close")}}</v-subheader>
+              <v-subheader class="info_account_close_style" @click="change_value0f_vk">
+                <span>{{$t("Close")}}</span>
+              </v-subheader>
             </v-list>
             <v-list v-else>
               <v-subheader class="info_warning_msg_style">{{$t("no_mnemonic_msg")}}</v-subheader>
-              <v-subheader class="info_account_close_style" @click="change_value0f_vk">{{$t("Close")}}</v-subheader>
+              <v-subheader class="info_account_close_style" @click="change_value0f_vk">
+                <span>{{$t("Close")}}</span>
+              </v-subheader>
             </v-list>
           </v-bottom-sheet>
       </div>
@@ -147,7 +153,7 @@
 
       <!-- 修改密码 -->
        <div class="pwdSheetWrapper rePwdSheetWrapper" v-if="showResetPwdSheet">
-        <v-bottom-sheet  v-model="showResetPwdSheet" dark>
+        <v-bottom-sheet  v-model="showResetPwdSheet" light>
           <div class="bts-dlg">
             <div class="sheet-title">
               <div class="stitle">
@@ -164,7 +170,7 @@
                         :append-icon="pwd1visible ? 'visibility' : 'visibility_off'"
                         :append-icon-cb="() => (pwd1visible = !pwd1visible)"
                         :type="pwd1visible ? 'text':'password'"
-                        required dark
+                        required light
                       ></v-text-field>
                 </div>
                 <div class="sheet-input">
@@ -175,7 +181,7 @@
                         :append-icon="pwd2visible ? 'visibility' : 'visibility_off'"
                         :append-icon-cb="() => (pwd2visible = !pwd2visible)"
                         :type="pwd2visible ? 'text':'password'"
-                        required dark
+                        required light
                       ></v-text-field>
                 </div>
                 <v-text-field
@@ -185,7 +191,7 @@
                       :append-icon="pwd3visible ? 'visibility' : 'visibility_off'"
                       :append-icon-cb="() => (pwd3visible = !pwd3visible)"
                       :type="pwd3visible ? 'text':'password'"
-                      required dark
+                      required light
                     ></v-text-field>
               </div>
               <div  class="sheet-btns">
@@ -577,7 +583,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none;
   .content
     height: 100%
     overflow-y:auto
@@ -610,7 +616,7 @@ export default {
   .qrcode
     text-align: center
 .footer
-  background: $primarycolor.gray
+  background: none
   height:40px
   line-height:40px
   font-size:14px
@@ -674,7 +680,7 @@ export default {
   padding: 10px 10px
   padding-bottom: calc(10px + constant(safe-area-inset-bottom))
   padding-bottom: calc(10px + env(safe-area-inset-bottom))
-  background: $secondarycolor.gray
+  background: $secondarycolor.white
 .sheet-btns
   display: flex
   color: $primarycolor.green
@@ -695,10 +701,10 @@ export default {
 
 
 .Info_mycard
-  background-color:$secondarycolor.gray  
+  background-color:$secondarycolor.white 
   height:550px
 .Info_mycardB
-  background-color:$secondarycolor.black
+  background-color:$secondarycolor.white
   opacity:0.3
 .Info_menu_color
   color:$primarycolor.green
@@ -734,10 +740,16 @@ export default {
 .info_qrcode_style
   text-align:center
 .info_account_close_style
-  color:$primarycolor.red
+  color:$primarycolor.white
+  background:$primarycolor.red
   font-size:16px
-  // text-align:center
-  padding-left:175px
+  margin: auto;
+  width: 100px;
+  border-radius: 8px;
+  // padding-left:175px
+  span
+    text-align: center;
+    width: 100%;
 
 .bts-dlg
   background: $secondarycolor.gray!important

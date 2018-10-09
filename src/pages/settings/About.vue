@@ -17,7 +17,7 @@
             <img src="../../assets/img/logox.png" alt="firefly" class="logo-img"/>
           </div>
           <div class="textcenter appname">
-            FireFly
+            Sbuy Wallet
           </div>
           <div class="textcenter appversion">
             {{$t('Version')}}:{{appversion}}<span v-if="isDebug">&nbsp;DEBUG</span>
@@ -47,12 +47,12 @@
                     <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
                 </div>
             </div>
-            <div class="row"  @click="openURL(fireflyGithub)">
+            <div class="row"  @click="openURL(sbuywalletGithub)">
                 <div class="label">
                     github
                 </div>
                 <div class="value">
-                    {{fireflyGithub}}
+                    {{sbuywalletGithub}}
                      <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
                 </div>
             </div>
@@ -101,7 +101,7 @@ export default {
       showmenuicon: false,
       showbackicon: true,
       appversion: APP_VERSION,
-      fireflyGithub: APP_GITHUB,
+      sbuywalletGithub: APP_GITHUB,
       officialSite: OFFICIAL_SITE,
       latestVersion: null,
       updateURL: null,

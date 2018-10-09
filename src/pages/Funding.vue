@@ -1,5 +1,5 @@
 <template>
-  <div class="page" dark v-bind:class="{hidebackground: scannerView}">
+  <div class="page" light v-bind:class="{hidebackground: scannerView}">
    <toolbar :title="$t(title)" 
       :showmenuicon="showmenuicon" 
       :showbackicon="showbackicon"
@@ -28,7 +28,7 @@
               class="selectasset"
               item-value="id"
               item-text="code"
-              dark
+              light
               :return-object="assetChoseReturnObject"
               @change="changeAsset"
                v-show="!scannerView"
@@ -431,7 +431,7 @@ export default {
 <style lang="stylus" scoped>
 @require '../stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   padding-top: 0px
   // padding-top: constant(safe-area-inset-bottom)
@@ -470,7 +470,7 @@ export default {
       justify-content: center;
       .menu-li
         float: left
-        color: $primarycolor.font
+        color: $primarycolor.darkgreen
         padding-left: 10px
         padding-right: 10px
         height: 55px
@@ -478,8 +478,10 @@ export default {
         width: 42%
         text-align: center
         font-size: 20px
+        transition-duration: .3s
       .menu-li.active
-        border-bottom: 2px solid $primarycolor.font
+        border-bottom: 2px solid $primarycolor.white
+        color: $secondarycolor.white;
 .selectasset
   color: $primarycolor.green
 .asset-select-code
@@ -516,6 +518,7 @@ export default {
   &.fundinginfo
     color: $secondarycolor.font
     text-align: left
+    padding: 8px
   // .refreshimg
   //   display: block
   //   width: 200px

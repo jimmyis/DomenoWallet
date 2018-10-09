@@ -83,7 +83,7 @@ export default {
 @require '../stylus/color.styl'
 $dot-size = 16px
 .password-content
-  background: $primarycolor.gray
+  background: $secondarycolor.white
   position: absolute
   top: 48px
   left: 0

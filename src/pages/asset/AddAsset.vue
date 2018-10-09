@@ -22,7 +22,7 @@
       <card class="icard" padding="2px 8px" v-if="addTypeFed">
         <div class="card-content" slot="card-content">
          <v-text-field
-              dark
+              light
               name="url"
               v-model="url"
               append-icon="search"
@@ -45,7 +45,7 @@
                 </div>
               </div>
               <div class="currency-right">
-                <v-btn icon disabled dark v-if="isTrusted(currency)">
+                <v-btn icon disabled light v-if="isTrusted(currency)">
                   <v-icon color='primary'>done</v-icon>
                 </v-btn>
                 <v-btn icon flat color="primary" v-else @click.stop="addTrust(currency)" :loading="working">
@@ -63,7 +63,7 @@
        <card class="icard" padding="8px 8px" v-if="addTypeManully">
         <div class="card-content" slot="card-content">
            <v-text-field
-              dark
+              light
               :label="$t('AssetCode')"
               name="asset_code"
               v-model="asset_code"
@@ -71,7 +71,7 @@
               primary
             ></v-text-field>
              <v-text-field
-              dark
+              light
               :label="$t('AssetIssuer')"
               name="asset_issuer"
               v-model="asset_issuer"
@@ -79,7 +79,7 @@
               primary
             ></v-text-field>
             <div class="flex-row">
-              <v-btn class='btn_trust'  block dark large @click="doManuallyTrust">{{$t('Button.OK')}}</v-btn>
+              <v-btn class='btn_trust'  block light large @click="doManuallyTrust">{{$t('Button.OK')}}</v-btn>
             </div>
         </div>
        </card>
@@ -450,7 +450,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   .content
     color: $primarycolor.font
 .currency-ul

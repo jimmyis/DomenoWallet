@@ -12,19 +12,19 @@
         <div class="card-content" slot="card-content">
           <ul class="settings-ul">
             <li class="settings-li">
-              <v-text-field name="input-name" required dark
+              <v-text-field name="input-name" required light
                             :label="$t(namelabel)" v-model="name"
               ></v-text-field>
             </li>
             <li class="settings-li">
-              <v-text-field name="input-address" required dark
+              <v-text-field name="input-address" required light
                             :label="$t(addlabel)" v-model='address'
               ></v-text-field>
             </li>
             <li class="settings-li">
               <v-text-field name="input-memo" :label="$t(memolabel)"
                             v-model='memo'    
-                            dark  
+                            light  
               ></v-text-field>
             </li>
           </ul>
@@ -142,7 +142,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   .content
     padding: 8px 8px
     display flex

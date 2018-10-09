@@ -18,7 +18,7 @@
             {{$t('Error.NoData')}}
           </div>
           <div class='list' v-else>
-            <v-text-field append-icon="search" v-model="search" dark 
+            <v-text-field append-icon="search" v-model="search" light 
                           class="search"  hide-details single-line >
             </v-text-field>
             <div class="myaddress-row" v-for="(data,index) in filtered" :key="index"
@@ -143,7 +143,7 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  background: none
   color: $primarycolor.font
   font-size: 16px
   .content

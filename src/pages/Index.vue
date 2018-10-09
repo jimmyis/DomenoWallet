@@ -28,8 +28,8 @@ export default {
   vertical-align:middle
   padding-top: 45%
   .logo
-    width: 120px
-    height:156px
+    width: 200px
+    height: auto
 
 
 </style>

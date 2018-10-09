@@ -4,11 +4,11 @@
  */
  <template>
   <div class="custom-keyboard">  
-    <div class="keyboard" :class="{keyboardOpen: this.isOpen}" onTouchMove={this.preventTouchMove} :style="{height: `${winH * 0.32}px`}">
+    <div class="keyboard" :class="{keyboardOpen: this.isOpen}" onTouchMove={this.preventTouchMove} :style="{height: `${winH * 0.36}px`}">
       <div :class="{keyboardLayout: true}">
         <div class="numbers">
           <span v-for="(item, i) in numbers" :key="item+i" class="btnKey">
-            <button class="button" type="button" @click="selectLevel1(item)">
+            <button class="key-button" type="button" @click="selectLevel1(item)">
               {{item}}
             </button>
             <div class="btnActive">
@@ -18,7 +18,7 @@
         </div>
         <div class="words">
           <span v-for="(item, i) in words" :key="item+i" class="btnKey">
-            <button class="button" type="button" @click="selectLevel1(item)">
+            <button class="key-button" type="button" @click="selectLevel1(item)">
               {{item}}
             </button>
             <div class="btnActive">
@@ -27,7 +27,7 @@
           </span>
           
           <span class="btnKey backspace" >
-            <button class="button" type="button" @click="backspace">
+            <button class="key-button" type="button" @click="backspace">
               <i class="material-icons icons">backspace</i>
             </button>
           </span>
@@ -73,7 +73,7 @@ export default {
   },
   data() {
     return {
-      numbers: "23456789",
+      numbers: "1234567890",
       words: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       winH: window.innerHeight,
       inputValue: this.defaultValue || ''
@@ -117,18 +117,20 @@ export default {
   -webkit-font-smoothing: antialiased
   -webkit-text-stroke-width: 0.2px
   -moz-osx-font-smoothing: grayscale
+.custom-keyboard
+  background: black
 .keyboard
   position: fixed
   z-index: 900
   right: 0
-  bottom: 1.5rem
+  bottom: 1rem
   left: 0
   padding-top: 10px
   user-select: none
   transition: transform 200ms ease-out
   transform: translateY(100%)
   text-align: center
-  background-color: $primarycolor.gray
+  background-color: $secondarycolor.lightgray
 .keyboardOpen 
   transform: translateY(0)
 
@@ -141,7 +143,7 @@ export default {
   width: 10%
   height: 25%
 
-.button 
+.key-button 
   font-size: .7rem
   display: inline
   width: 80%
@@ -151,7 +153,7 @@ export default {
   text-align: center
   border: 0
   border-radius: 3px
-  background-color: $secondarycolor.gray
+  background-color: $secondarycolor.white
   box-shadow: 0 2px 3px rgba(0, 0, 0, .15)
   &:focus
     outline: 0
@@ -200,16 +202,22 @@ export default {
 
 .backspace 
   width: 15%
+  height: calc(25% - .1rem)
   vertical-align: middle
+  position: absolute;
+  right: 0;
+  margin: 5px;
   i
-    font-size: 1rem
-  .button
+    font-size: .9rem
+    color: $primarycolor.font
+  .key-button
     margin-top: 0
-    padding-top: .1rem
+    // padding-top: .1rem
+    padding-top: 6px
     &:active
       background-color: #fff
       i
-        color: #cbcdd1
+        color: $primarycolor.font
       
 .keyboardHide
   display: none

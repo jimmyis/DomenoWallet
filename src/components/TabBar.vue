@@ -97,17 +97,17 @@ export default {
     border-radius: 0px;
     z-index: 99;
 .tb-menu
-  background: $secondarycolor.gray
-  box-shadow: 0px -2px 2px $primarycolor.gray
+  background: $primarycolor.darkgreen!important
+  box-shadow: 0px -2px 2px $primarycolor.gray!important
   bottom: constant(safe-area-inset-bottom)!important
   bottom: env(safe-area-inset-bottom)!important
   &.bottom-nav.bottom-nav--active.dark
     .btn.btn--flat.btn--active
-      color: $primarycolor.green
+      color: $secondarycolor.white
 
 .bottom-nav .btn
   opacity inherit!important
-  color #999
+  color: $secondarycolor.gray
 .bottom-nav .btn:not(.btn--active)
   filter inherit!important
 .unread-wrapper
@@ -127,8 +127,8 @@ export default {
   height: 0
   height:  constant(safe-area-inset-bottom)
   height:  env(safe-area-inset-bottom)
-  background: $secondarycolor.gray!important
+  background: $primarycolor.darkgreen!important
   z-index: 999
 .tabbar-wrapper
-  background: $secondarycolor.gray!important
+  background: $primarycolor.darkgreen!important
 </style>

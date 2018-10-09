@@ -194,7 +194,8 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl'
 .page
-  background: $primarycolor.gray
+  //  background: #212122
+  background: #002700
   color: $primarycolor.font
   font-size: 16px
   height: 100vh
@@ -218,7 +219,9 @@ export default {
 .guidepage_swiper_img
     padding-top:20% 
     padding-left:20px
-    padding-right:20px    
+    padding-right:20px
+    margin-left: auto
+    margin-right: auto
     width:300px
     height: 220px
     
@@ -228,14 +231,15 @@ export default {
     font-size:20px
     text-align:center
 .guidepage_swiper_content
-    color:$primarycolor.font
+    color:$secondarycolor.white
     font-size:18px
     font-family:"Helvetica Neue"
     padding-left:20px
+    padding-right:20px
     padding-top:10px
 .bottom-nav
     text-align:center
-    color:$primarycolor.green
+    color:$secondarycolor.white
     position: fixed
     bottom: 0px
     bottom: constant(safe-area-inset-bottom)
@@ -245,21 +249,24 @@ export default {
     top: calc(100vh - 100px - env(safe-area-inset-bottom))
     left: 0px
     right: 0px
-    background: $primarycolor.gray!important
+    background: $primarycolor.green!important
     z-index: 9999
     padding-bottom: 8px
     padding-top: 8px
 
 .bg-p
-    background: $primarycolor.gray!important
+    // background: $primarycolor.gray!important
 
 .infocard
    min-height 10rem
    max-width: 100%
-   background-color: $secondarycolor.gray
+   //  background-color: #023502
+   background-color: #000125
+   color: $secondarycolor.white
    height: 80vh
    padding-top: 1rem
    border-radius: 5px
+   text-align: center
 .swiper-bullet
     color: $primarycolor.green
 </style>
