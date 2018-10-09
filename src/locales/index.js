@@ -33,8 +33,8 @@ export const TH = {
 
 export const LANGUAGES = [
   EN,
-  ZH_CN,
-  ZH_HK,
+  // ZH_CN,
+  // ZH_HK,
   TH
 ]
 
