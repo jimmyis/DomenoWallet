@@ -48,9 +48,9 @@ var FFWAPI = /** @class */ (function () {
                 supports_marks: true,
                 supports_time: true,
                 exchanges: [{
-                        value: 'firefly',
-                        name: 'firefly',
-                        desc: 'firefly',
+                        value: 'sbuywallet',
+                        name: 'sbuywallet',
+                        desc: 'sbuywallet',
                     }],
                 symbols_types: [{ name: 'bitcoin', value: 'bitcoin' }]
             };
@@ -68,9 +68,9 @@ var FFWAPI = /** @class */ (function () {
                 ticker: _this._baseCode + '/' + _this._counterCode,
                 description: '',
                 type: 'bitcoin',
-                exchange: 'firefly',
-                "exchange-traded": "firefly",
-                "exchange-listed": "firefly",
+                exchange: 'sbuywallet',
+                "exchange-traded": "sbuywallet",
+                "exchange-listed": "sbuywallet",
                 timezone: 'UTC',
                 minmov: 1,
                 // pricescale: 0.0000001,

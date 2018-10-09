@@ -38,9 +38,9 @@ export function exportAccount(account,accountData){
       "key": accountData.seed // 私钥地址
     }
   }
-  let firefly = JSON.stringify(data)
-  console.log(firefly)
-  return firefly
+  let sbuywallet = JSON.stringify(data)
+  console.log(sbuywallet)
+  return sbuywallet
 }
 
 export function exportMnemonic(name,mnemonic){
@@ -52,9 +52,9 @@ export function exportMnemonic(name,mnemonic){
       "mnemonic": mnemonic //助记词
     }
   }
-  let firefly = JSON.stringify(data)
-  console.log(firefly)
-  return firefly
+  let sbuywallet = JSON.stringify(data)
+  console.log(sbuywallet)
+  return sbuywallet
 }
 
 /**

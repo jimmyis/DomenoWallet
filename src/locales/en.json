@@ -510,7 +510,7 @@
   "redUpGreenDown":"red up green down",
   "greenUpRedDown":"green up red down",
   "viewMnemonic":"show mnemonic",
-  "fchainHorizon":"firefly official",
+  "fchainHorizon":"sbuywallet official",
   "validateMnemonic":"please input mnemonic to varify",
   "Warning_mnemonic_msg":"WARNING! The mnemonic is very important. Please save it safely and do not share it with anyone.",
   "no_mnemonic_msg":"There is no mnemonic!",
