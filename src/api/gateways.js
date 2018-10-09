@@ -14,7 +14,8 @@ export const APP_GITHUB = pkg.github
 export const OFFICIAL_SITE = 'https://fchain.io'
 
 // APP 最新版本信息
-export const CHECK_UPDATE = 'https://raw.githubusercontent.com/StellarCN/firefly/master/package.json'
+// export const CHECK_UPDATE = 'https://raw.githubusercontent.com/StellarCN/firefly/master/package.json'
+export const CHECK_UPDATE = 'https://raw.githubusercontent.com/jimmyis/Sbuy-Wallet/master/package.json'
 //资产说明
 export const ASSET_INFO_BASE_URL = 'https://raw.githubusercontent.com/StellarCN/firefly/docs/assets/'
 
@@ -211,7 +212,8 @@ export function getAddressPinInfo(url){
 }
 
 
-export const DEFAULT_TRADEPAIR_API = 'https://api.fchain.io/v2/api/trade_aggregations'
+// export const DEFAULT_TRADEPAIR_API = 'https://api.fchain.io/v2/api/trade_aggregations'
+export const DEFAULT_TRADEPAIR_API = 'https://easy-mock.com/mock/5bb1c121e043185bc58b80e9/wallet/trade'
 
 // 查询默认的交易对和行情
 export function getDefaultSysTradePairAndStat(){
@@ -286,7 +288,8 @@ export function fetchFundConfig(){
   })
 }
 
-export const DAPP_FETCH_URL = 'https://update.fchain.io/config/dapp.json'
+// export const DAPP_FETCH_URL = 'https://update.fchain.io/config/dapp.json'
+export const DAPP_FETCH_URL = 'https://easy-mock.com/mock/5bb1c121e043185bc58b80e9/wallet/link'
 
 export function fetchSysDApps(){
   let url = DAPP_FETCH_URL + '?r=' + new Date().getTime()

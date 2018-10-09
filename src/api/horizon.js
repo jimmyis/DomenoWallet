@@ -1,10 +1,14 @@
 
 // 官方地址
-export const OFFICIAL_HORIZON = 'https://horizon.stellar.org'
+export const OFFICIAL_HORIZON = 'https://gw-th1.domeno.network'
+// export const OFFICIAL_HORIZON = 'https://horizon.stellar.org'
 
-export const CHINA_HORIZON = 'https://api.chinastellar.com'
+export const CHINA_HORIZON = 'https://gw-th1.domeno.network'
+// export const CHINA_HORIZON = 'https://api.chinastellar.com'
 //万云
-export const WANCLOUD_HORIZON = 'https://stellar-api.wancloud.io'
+export const WANCLOUD_HORIZON = 'https://gw-th1.domeno.network'
+// export const WANCLOUD_HORIZON = 'https://stellar-api.wancloud.io'
 
 //自定义horizon
-export const FCHAIN_HORIZON = 'https://horizon.fchain.io'
+export const FCHAIN_HORIZON = 'https://gw-th1.domeno.network'
+// export const FCHAIN_HORIZON = 'https://horizon.fchain.io'-

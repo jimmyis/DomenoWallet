@@ -79,7 +79,8 @@ export function getAllEffectOffers(account,start_time,end_time){
   return axios.get(uri, {timeout: 60000})
 }
 
-const FCHAIN_FEED_URL = 'https://fchain.io/feed/'
+const FCHAIN_FEED_URL = 'https://hilight.kapook.com/main/feed/'
+// const FCHAIN_FEED_URL = 'https://fchain.io/feed/'
 
 export function getFchainRss(){
   return new Promise((resolve,reject) => {
