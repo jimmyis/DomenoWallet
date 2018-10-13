@@ -172,8 +172,8 @@ export default {
   background: $primarycolor.red!important
 
 .contact-book {
-  color: $primarycolor.font
-  background: $primarycolor.gray
+  color: $primarycolor.white
+  background: $primarycolor.white
   font-size: 16px
   z-index: 99
   position: absolute
@@ -256,11 +256,11 @@ export default {
 }
 
 .contacts-row {
-  background-color: $primarycolor.gray;
+  background-color: $secondarycolor.white;
 }
 
 .mycontacts-li {
-  background-color: $secondarycolor.gray;
+  background-color: $secondarycolor.white;
   border-radius: 5px;
   padding: 15px 15px;
   margin-top:1px
