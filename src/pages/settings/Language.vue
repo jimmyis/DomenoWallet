@@ -119,7 +119,7 @@ export default {
     font-size:20px
 .iconfont_style
     font-size:20px
-    color:$secondarycolor.gray
+    color:$secondarycolor.white
 
 </style>
 
