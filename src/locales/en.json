@@ -445,6 +445,8 @@
 
   "BackedUp":"Backed Up",
   "ReceiveAssetMsg":"Scan the QR code to send me",
+  "Title.ReceiveAsset": "Receive Asset",
+  "Title.SendAsset": "Send Asset",
   "Change":"Change",
   "MyAccount":"My Account",
   "MemoBook.MyAddress":"My Address",
