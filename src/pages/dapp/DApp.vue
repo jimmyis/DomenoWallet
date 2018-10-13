@@ -53,9 +53,9 @@
       </v-layout>
 
 
-      <div class="dapp-subtitle subheading  pl-2">{{$t('CustomDApp')}}</div>
+      <!-- <div class="dapp-subtitle subheading  pl-2">{{$t('CustomDApp')}}</div> -->
 
-      <v-layout class="apps-layout" row wrap >
+      <!-- <v-layout class="apps-layout" row wrap >
         <v-flex
           xs4
           v-for="(app,index) in myapps"
@@ -87,7 +87,7 @@
             </div>
           </v-card>
         </v-flex>
-      </v-layout>
+      </v-layout> -->
 
     <v-dialog v-model="showConfirmDlg" max-width="95%" persistent>
       <div>
@@ -127,7 +127,7 @@
           <v-btn color="error darken-1" :loading="addingApp" flat @click.stop="doAddApp">{{$t('Save')}}</v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
+    </v-dialog> -->
 
 
     </v-container>
