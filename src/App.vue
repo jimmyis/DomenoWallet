@@ -64,7 +64,7 @@ export default {
       devicelang: null,
       showFuzzyView: false,
       tabBarShow: false,
-      tabBarItems: ['MyAssets', 'TradeCenter', 'Apps', 'My'],
+      tabBarItems: ['MyAssets', 'ReceiveAsset', 'SendAsset', 'My'],
 
       messagesInterval: null,
       updateConfirmDlg: false,
