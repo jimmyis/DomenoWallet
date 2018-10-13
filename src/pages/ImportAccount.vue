@@ -3,10 +3,10 @@
  */
 <template>
 <div class="page" v-bind:class="{hidebackground: showScanner}">
-    <toolbar :title="$t(title)" :showbackicon="showbackicon">
+    <toolbar class="toolbar" :title="$t(title)" :showbackicon="showbackicon">
       <v-btn icon style="visibility: hidden;" slot="left-tool">
-          <v-icon class="back-icon"/>
-        </v-btn>
+        <v-icon class="back-icon"/>
+      </v-btn>
       <div class="right" slot="right-tool">
         <span class="toolbar-ico" @click="scan">
           <v-icon class="font28" v-if="showScanner">&#xE5CD;</v-icon>
@@ -301,4 +301,18 @@ export default {
 .seed-span
   word-wrap:break-word
   color: $secondarycolor.font
+.toolbar
+  .back-icon, .iconfont, .toolbar-ico
+    color: $secondarycolor.white
+    i
+      color: $secondarycolor.white
+  .btn
+    .btn--icon
+      color: $secondarycolor.white
+  .iconfont
+    font-size: 24px
+    color: $secondarycolor.white
+  .material-icons
+    font-size: 24px
+    color: $secondarycolor.white
 </style>
