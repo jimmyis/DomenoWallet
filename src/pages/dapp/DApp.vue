@@ -107,7 +107,7 @@
     </v-dialog>
 
     <!--新增弹窗-->
-    <v-dialog v-model="showAddDlg" persistent max-width="90%">
+    <!-- <v-dialog v-model="showAddDlg" persistent max-width="90%">
       <v-card class="add-custom-dapp-card">
         <v-card-text>
           <v-container grid-list-md>
