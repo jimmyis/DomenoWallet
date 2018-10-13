@@ -313,8 +313,8 @@ export default {
 }
 
 .bg-hide {
-  background: $primarycolor.green;
-  // background-color: transparent;
+  // background: $primarycolor.green;
+  background-color: transparent!important;
 }
 
 .loading {
@@ -447,7 +447,11 @@ export default {
     // background: $primarycolor.verylightgreen;
   }
   .app.application.theme--dark.bg-hide{
-    background: none;
+    background: none!important;
+    background-color:transparent;
+  }
+  .app.application.theme--light.bg-hide{
+    background: none!important;
     background-color:transparent;
   }
   .application{
