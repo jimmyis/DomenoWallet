@@ -737,10 +737,11 @@ export default {
   color:$secondarycolor.font
 
 .sendconfimToStyle
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   padding-left:8px
   padding:10px 0px 10px 8px
   border:none
+  border-bottom:1px solid $primarycolor.white
 .sendconfim_To
   font-size:18px
   color:$secondarycolor.font
@@ -752,11 +753,12 @@ export default {
   color:$primarycolor.font
 
 .sendconfim_MemoAndType
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   padding-left:8px
   padding-top:10px
   padding-bottom:10px
   border:none
+  border-bottom:1px solid $primarycolor.white
 .sendconfim_MemoTitle
   font-size:18px
   color:$secondarycolor.font
@@ -771,19 +773,27 @@ export default {
   color:$primarycolor.font
 
 .sendconfim_Btns
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   padding:10px 0px 20px 0px
+  color: $secondarycolor.white
+  text-align: center
   border:none
 .sendconfimBtnOk
-  color:$primarycolor.red
+  // color:$primarycolor.red
+  color: $secondarycolor.white
   font-size:18px
   text-align:center
-  padding-left:40%
+  // padding-left:40%
+  padding-left: 20%
+  padding-right: 20%
 .sendconfimBtnCancel
-  color:$primarycolor.red
+  // color:$primarycolor.red
+  color: $secondarycolor.white
   font-size:18px
   text-align:center
-  padding-left:30%
+  // padding-left:30%
+  padding-left: 20%
+  padding-right: 20%
   
 
 .content
