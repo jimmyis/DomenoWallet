@@ -305,6 +305,9 @@ export default {
         this.num = 0
       }
       console.log(this.num);
+      if(sendnum > this.selectedasset.balance){
+        this.num = this.selectedasset.balance - 1.1
+      }
     }
   },
   computed:{
