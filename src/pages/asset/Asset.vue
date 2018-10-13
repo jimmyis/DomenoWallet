@@ -61,31 +61,43 @@
                 <v-spacer></v-spacer>
               </v-flex> 
               -->
+          <v-layout row wrap class="asset-amount asset_amount">
+            <v-flex xs12 class="row asset_row" d-flex justify-center align-center>
+                {{$t('History.Transaction')}}
+            </v-flex>
+            <v-flex xs12 class="row asset_row" d-flex justify-center align-center>
+              <component class="component" :is="history"></component>
+            </v-flex>
+            <!-- <v-flex xs12 class="knowledge_of_assets" ><a href="https://fchain.io" target="_blank">了解{{item.code}}&nbsp;></a> -->
+            <!-- <v-flex xs12 class="knowledge_of_assets" ><a @click="toAssetKnowledge(item)" target="_blank">{{$t("Understand")}}{{item.code}}&nbsp;></a> -->
+
+            <!-- </v-flex> -->
+          </v-layout>
         </swiper-slide>
       </swiper>
 
 
-      <h4 class="subtitle">{{$t('History')}}</h4>
-       <card padding="10px 10px" class="infocard asset_infocard asset_card_f-card">
+      <!-- <h4 class="subtitle">{{$t('History')}}</h4>
+      <card padding="10px 10px" class="infocard asset_infocard asset_card_f-card">
         <div class="history" slot="card-content">
           <v-layout class="history-li" row wrap v-for="item in history" :key="item.id" @click.stop="toTranscation(item)">
-              <v-flex xs4 class="history-wrapper">
-                <div class="history">
-                  <div class="history-flag">{{$t(item.flag)}}</div>
-                  <div class="history-time">{{item.date}}</div>
-                </div>
-              </v-flex>
-              <v-flex xs8 class="history-wrapper">
-                <div :class="'history-amount' + (item.isInbound ? ' add ':' minus ') ">
-                    <span class="inbound" v-if="item.isInbound">+</span>
-                    <span class="inbound" v-else>-</span>
-                    <span class="amount">{{item.amount}}</span>
-                    <span class="code">{{item.asset.code}}</span>
-                </div>
-              </v-flex>
-            </v-layout>
+            <v-flex xs4 class="history-wrapper">
+              <div class="history">
+                <div class="history-flag">{{$t(item.flag)}}</div>
+                <div class="history-time">{{item.date}}</div>
+              </div>
+            </v-flex>
+            <v-flex xs8 class="history-wrapper">
+              <div :class="'history-amount' + (item.isInbound ? ' add ':' minus ') ">
+                  <span class="inbound" v-if="item.isInbound">+</span>
+                  <span class="inbound" v-else>-</span>
+                  <span class="amount">{{item.amount}}</span>
+                  <span class="code">{{item.asset.code}}</span>
+              </div>
+            </v-flex>
+          </v-layout>
         </div>
-      </card>
+      </card> -->
     </div>
     <!-- 发送和接收按键放在最底部-->
     <v-layout class="fixed-bottom btns">
@@ -110,6 +122,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import Loading from '@/components/Loading'
 import { isNativeAsset } from '@/api/assets'
 import paymentsMixin from '@/mixins/payments'
+import HistoryTransactionSpecific from '@/components/HistoryTransactionSpecific'
 
 export default {
   data(){
@@ -129,7 +142,8 @@ export default {
           slidesPerView: 'auto',
           touchRatio: 0.2,
           slideToClickedSlide: true
-      }
+      },
+      history: HistoryTransactionSpecific,
     }
   },
   mixins: [paymentsMixin],
@@ -268,8 +282,8 @@ export default {
     Toolbar,
     swiper,
     swiperSlide,
-    Loading
-    
+    Loading,
+    HistoryTransactionSpecific,
   }
 
 
@@ -278,5 +292,8 @@ export default {
 
 <style lang="stylus" scoped>
 @require '~@/stylus/asset.styl'
+
+.component
+  width: auto!important;
 
 </style>
