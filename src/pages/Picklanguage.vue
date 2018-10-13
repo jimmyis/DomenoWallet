@@ -149,9 +149,9 @@ export default {
 
 .iconfont_style_color
     color:$primarycolor.green
-    font-size:20px
+    font-size:22px
 .iconfont_style
-    font-size:20px
-    color:$secondarycolor.gray
+    font-size:22px
+    color:$secondarycolor.white
 </style>
 
