@@ -136,6 +136,8 @@
         <!-- <v-btn class="error btn-send" @click.stop="send">{{$t('Send')}}</v-btn> -->
         <!-- wdp改动的地方 -->
         <v-btn class="error btn-send" @click.stop="change_is_sendconfim">{{$t('Send')}}</v-btn>
+        <br /><br />
+        <v-btn class="success btn-send" @click="scan">Scan QR Code</v-btn>
      </div>
 
     </div>
@@ -192,6 +194,14 @@
                   </v-flex>
                   <v-flex xs6>
                     <span @click.stop="is_sendconfim=false" class="sendconfimBtnCancel">{{$t('Button.Cancel')}}</span>
+              <v-layout class="sendconfim_Btns"><!-- 确定 取消-->
+                  <v-flex xs6>
+                    <q-r-scan
+                      @finish="qrfinish"
+                      @close="qrclose"
+                      :validator="qrvalidator"
+                      v-if="showScanner">
+                    </q-r-scan>
                   </v-flex>
               </v-layout>
             </v-container>
@@ -299,6 +309,15 @@ export default {
       return this.balances.map(item=>{
         return Object.assign({id: item.code+"-"+item.issuer},item)
       })
+    qrtext(){
+      // use stargaze pattern
+      //{"stellar":{"payment":{"destination":"GAD2....5UZ6","amount":1,"asset":{"code":"BTC","issuer":"GATEMH....MTCH"}}}}
+      let data = {stellar:{payment:{destination:this.account.address,amount: this.num}}}
+      if(!isNativeAsset(this.selectedasset)){
+        data.stellar.payment.asset = {code:this.selectedasset.code, issuer: this.selectedasset.issuer}
+      }
+      console.log(JSON.stringify(data))
+      return JSON.stringify(data)
     }
 
   },
