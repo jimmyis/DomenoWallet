@@ -21,33 +21,30 @@
               :return-object="assetChoseReturnObject"
               light
             >
+
             <template slot="selection" slot-scope="data">
               <span class="asset-select-code">{{data.item.code}}</span>
               <span class="asset-select-issuer" v-if="assethosts[data.item.issuer]">{{assethosts[data.item.issuer]}}</span>
               <span class="asset-select-issuer" v-else-if="assethosts[data.item.code]">{{assethosts[data.item.code]}}</span>
               <span class="asset-select-issuer" v-else>{{data.item.issuer|miniaddress}}</span>
-
             </template>
+
             <template slot="item" slot-scope="data">
               <span class="asset-select-code">{{data.item.code}}</span>
               <span class="asset-select-issuer" v-if="assethosts[data.item.issuer]">{{assethosts[data.item.issuer]}}</span>
               <span class="asset-select-issuer" v-else-if="assethosts[data.item.code]">{{assethosts[data.item.code]}}</span>
               <span class="asset-select-issuer" v-else>{{data.item.issuer|miniaddress}}</span>
-
             </template>
           </v-select>
           <v-text-field
-              name="amount"
-              :label="$t('Amount')"
-              :value="amount"
-              @input="updateAmount"
-              light
-              :suffix="selectedasset.code"
-              type="Number"
-
-              
-              
-              ></v-text-field>
+            name="amount"
+            :label="$t('Amount')"
+            :value="amount"
+            @input="updateAmount"
+            light
+            :suffix="selectedasset.code"
+            type="Number"
+          ></v-text-field>
             <div class="receive_asset_msg_one">
                 <span>{{$t("Available")}}</span> 
                 <span>{{selectedasset.code}}:</span>               
@@ -101,31 +98,27 @@ export default {
       qrcodebase64:null,
       assetChoseReturnObject: true,
       showassetcode:false,
-  
-
-
     }
   },
   watch:{
     num :function(){
-     if(this.num===""||this.num===null  ){
-      this.showassetcode=false;
-    }else {
-        this.showassetcode=true;
+     if (this.num === "" || this.num === null){
+      this.showassetcode = false;
+    } else {
+      this.showassetcode = true;
     } 
   
     },
-    amount:function(){
-    let sendnum = Number(this.amount);
-    if(sendnum<0){
-      this.num=0
-    }
-  
-    if(sendnum>this.selectedasset.balance){
-      this.num=this.selectedasset.balance
+    amount() {
+      let receivenum = Number(this.amount);
+      if (receivenum < 0){
+        this.num = 0
       }
-    }
   
+    // if(sendnum>this.selectedasset.balance){
+    //   this.num=this.selectedasset.balance
+    //   }
+    }
   },
    computed:{
     ...mapState({
