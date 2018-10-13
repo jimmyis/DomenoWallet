@@ -96,7 +96,7 @@ export default {
     font-size: 16px
     text-align: center
     padding-top: 8px
-    padding-bottom: 8px
+    // padding-bottom: 8px
     padding-bottom: constant(safe-area-inset-bottom)
     padding-bottom: env(safe-area-inset-bottom)
     .button
