@@ -709,16 +709,17 @@ export default {
 .v_container
   padding:0px 0px
 .sendconfimMsg
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   font-size:20px
   color:$primarycolor.red
   text-align:center
 
 .sendconfimAssetStyle
-  background:$secondarycolor.gray
+  background:$secondarycolor.white
   padding-left:8px
   padding-bottom:10px
   border:none
+  border-bottom:1px solid $primarycolor.white
 .sendconfimAsset
   font-size:18px
   color:$secondarycolor.font
@@ -885,5 +886,4 @@ export default {
 
 .ex_content
   font-size: .5rem
-
 </style>
