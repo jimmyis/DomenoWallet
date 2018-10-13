@@ -197,5 +197,17 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/settings.styl'
 .content
-    padding-bottom:0px
+  padding-bottom:0px
+.toolbar
+  i
+    color: $secondarycolor.white
+  .btn
+    .btn--icon
+      color: $secondarycolor.white
+  .iconfont
+    font-size: 24px
+    color: $secondarycolor.white
+  .material-icons
+    font-size: 24px
+    color: $secondarycolor.white
 </style>
