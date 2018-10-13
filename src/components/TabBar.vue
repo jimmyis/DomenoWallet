@@ -25,17 +25,29 @@ export default {
           path: "/assets",
           icon: "account_balance_wallet"
         },
+        // {
+        //   title: "Menu.TradeCenter",
+        //   name: "TradeCenter",
+        //   path: "/trade",
+        //   icon: "trending_up"
+        // },
+        // {
+        //   title: "Title.ThirdApp",
+        //   name: "Apps",
+        //   path: "/apps/all",
+        //   icon: "apps"
+        // },
         {
-          title: "Menu.TradeCenter",
-          name: "TradeCenter",
-          path: "/trade",
-          icon: "trending_up"
+          title: "Title.ReceiveAsset",
+          name: "ReceiveAsset",
+          path: "/assets/receive",
+          icon: "call_received"
         },
         {
-          title: "Title.ThirdApp",
-          name: "Apps",
-          path: "/apps/all",
-          icon: "apps"
+          title: "Title.SendAsset",
+          name: "SendAsset",
+          path: "/assets/send",
+          icon: "call_made"
         },
         // {
         //   title: "Menu.Funding",
