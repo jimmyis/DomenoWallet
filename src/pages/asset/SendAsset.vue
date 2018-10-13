@@ -53,15 +53,13 @@
           <v-text-field
             name="amount"
             :label="$t('Amount')"
-            v-model="amount"
+            :value="amount"
+            @input="updateAmount"
             light
             :color="'error'"
-            :suffix="selectedasset.code"
             required
-            type="text"
-            :placeholder="( isNative(selectedasset) ? (''+(selectedasset.balance - reserve - 0.00001)): (''+selectedasset.balance) )|| '0'"
-            @input="amountInput"
-
+            :suffix="selectedasset.code"
+            type="Number"
           ></v-text-field>
             <!-- <v-slider v-model="num"
                 class="amount-slider"
@@ -190,10 +188,12 @@
               </v-layout>
               <v-layout class="sendconfim_Btns"><!-- 确定 取消-->
                   <v-flex xs6>
-                    <span @click.stop="send" class="sendconfimBtnOk">{{$t('Button.OK')}}</span>
+                    <span @click.stop="send" class="btn green sendconfimBtnOk">{{$t('Button.OK')}}</span>
                   </v-flex>
                   <v-flex xs6>
-                    <span @click.stop="is_sendconfim=false" class="sendconfimBtnCancel">{{$t('Button.Cancel')}}</span>
+                    <span @click.stop="is_sendconfim=false" class="btn red sendconfimBtnCancel">{{$t('Button.Cancel')}}</span>
+                  </v-flex>
+              </v-layout>
               <v-layout class="sendconfim_Btns"><!-- 确定 取消-->
                   <v-flex xs6>
                     <q-r-scan
@@ -208,7 +208,7 @@
         </v-bottom-sheet>
       </div>
 
-    <v-dialog v-model="exchangeConfirmDlg" persistent max-width="95%">
+    <v-dialog v-model="exchangeConfirmDlg" persistent max-width="90%">
       <v-card>
         <v-card-text class="ex_content">{{$t('send_to_exchange', [choosedExchange])}}</v-card-text>
         <v-card-actions>
@@ -263,15 +263,16 @@ export default {
       memotypes:['None','Text','ID','Hash','Return'], //Memo types, if choose 'None', will clear data and close menu
 
       assetChoseReturnObject: true,
-      selectedasset:{},
+      selectedasset: {
+        // balance: 0,
+      },
 
       destination:null,
       realDestination:null,//G开头的恒星地址，主要是为了如果输入联邦地址，可以支持查询对应的实际地址
       federationUrlResult:null,//如果destination是联邦地址，那么查询结果就是对应的值，结果为{stellar_address:'*',account_id:'G',memo_type:'',memo:''}
       fedSearching: false,
 
-      amount:null,
-      num:0,
+      num: null,
 
       numStep: Number(0.0000001),
 
@@ -290,7 +291,23 @@ export default {
 
     }
   },
-   computed:{
+  watch:{
+    num() {
+      if (this.num === "" || this.num === null){
+        this.showassetcode = false;
+      } else {
+        this.showassetcode = true;
+      }
+    },
+    amount() {
+      let sendnum = Number(this.amount);
+      if (sendnum < 0){
+        this.num = 0
+      }
+      console.log(this.num);
+    }
+  },
+  computed:{
     ...mapState({
       account: state => state.accounts.selectedAccount,
       accountData: state => state.accounts.accountData,
@@ -309,6 +326,15 @@ export default {
       return this.balances.map(item=>{
         return Object.assign({id: item.code+"-"+item.issuer},item)
       })
+    },
+    amount:{
+      get(){
+        return this.num
+      },
+      set(val){
+        this.num = val
+      }
+    },
     qrtext(){
       // use stargaze pattern
       //{"stellar":{"payment":{"destination":"GAD2....5UZ6","amount":1,"asset":{"code":"BTC","issuer":"GATEMH....MTCH"}}}}
@@ -319,7 +345,6 @@ export default {
       console.log(JSON.stringify(data))
       return JSON.stringify(data)
     }
-
   },
   mounted(){
     this.initExchanges();
@@ -383,6 +408,9 @@ export default {
     numInput(value){
       console.log('num input '+value)
       this.amount = ''+value
+    },
+    updateAmount(val){
+      this.num = val      
     },
     scan(){
       //只能识别stargazer类似的格式数据
