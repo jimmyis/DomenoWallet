@@ -298,9 +298,16 @@ export default {
   font-size: 14px
   .tab.active
     color: $primarycolor.green
-.seed-span
-  word-wrap:break-word
-  color: $secondarycolor.font
+.seeds
+  display: block
+  margin-top: 100px;
+  .seed-span
+    word-wrap:break-word
+    color: $secondarycolor.font
+.seed-input
+  height: 60px
+  .input-group__input
+    height: 60px
 .toolbar
   .back-icon, .iconfont, .toolbar-ico
     color: $secondarycolor.white
