@@ -93,10 +93,10 @@
             </v-flex>
             <v-flex xs7 class="myassets-wrapper">
               <div class="myassets-balance third">
-                 <span class="balance">{{item.balanceStr}}</span>
                  <span class="label">{{$t('Total')}}</span> 
                  <br/>
-                  <span v-if="item.total >=0">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span>
+                 <span class="balance">{{item.balanceStr}}</span>
+                  <!-- <span v-if="item.total >=0">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span> -->
               </div>
             </v-flex>
           </v-layout>
