@@ -438,7 +438,7 @@ export default {
             if (payment.asset) {
               this.selectedasset = payment.asset
             } else {
-              this.selectedasset = {code: 'XLM'}
+              this.selectedasset = {code: 'FEE'}
             }
             //根据当前资产选择
             if(this.selectedasset.code){

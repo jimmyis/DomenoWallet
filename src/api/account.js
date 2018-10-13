@@ -148,7 +148,7 @@ export function send(seed,pubkey,target,assetdata,amount,memo_type,memo_value,ba
          (err.response && err.response.status === 404)){
           //新建用户只能发XLM
           if(!isNativeAsset(asset)){
-            throw new Error('Error.UnFundNeedXLM')
+            throw new Error('Error.UnFundNeedFEE')
           }
             //是否资产不足
             var reserve = 2 * ( base_reserve || BASE_RESERVE )
@@ -230,17 +230,17 @@ export function shortAddress(address){
   if (!address || address.length < 20) {
     return address;
   }
-  var start = address.substring(0, 8);
-  var end = address.substring(address.length - 8);
+  var start = address.substring(0, 16);
+  var end = address.substring(address.length - 16);
   return start + '...' + end;
 }
 
 export function miniAddress(address){
-  if (!address || address.length < 12) {
+  if (!address || address.length < 20) {
     return address;
   }
-  var start = address.substring(0, 4);
-  var end = address.substring(address.length - 4);
+  var start = address.substring(0, 12);
+  var end = address.substring(address.length - 8);
   return start + '...' + end;
 }
 

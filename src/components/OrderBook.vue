@@ -446,8 +446,8 @@ export default {
       //         d = new Decimal(total).div(item.price).toFixed(7)
       //       }
       //       return Object.assign({}, item, { amount: d, total, 
-      //         counter_issuer: item.counter_issuer ? item.counter_issuer : 'stellar.org',
-      //         base_issuer: item.base_issuer ? item.base_issuer : 'stellar.org',
+      //         counter_issuer: item.counter_issuer ? item.counter_issuer : 'domeno.network',
+      //         base_issuer: item.base_issuer ? item.base_issuer : 'domeno.network',
       //         price: Number(item.price)
       //       })
       //     }).filter(item=>{

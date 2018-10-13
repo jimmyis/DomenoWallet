@@ -212,7 +212,7 @@ export default {
     TotalSum() {
       let pricemap = this.prices
       let data = this.balances.map(item=>{
-        let v = isNativeAsset(item) ? pricemap['XLM'] : pricemap[item.code + '-' + item.issuer]
+        let v = isNativeAsset(item) ? pricemap['FEE'] : pricemap[item.code + '-' + item.issuer]
         return v ? new Decimal(v.price || 0).times(item.balance) : new Decimal(0)
       })
       if(data.length === 0)return 0

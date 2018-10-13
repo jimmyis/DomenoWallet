@@ -28,7 +28,7 @@
               append-icon="search"
               :append-icon-cb="search"
               type="text"
-              placeholder='fchain.io or stellar.org'
+              placeholder='fchain.io or domeno.network'
               primary
             ></v-text-field>
         <div @click="addallasset(currencies)" class="addallasset">{{$t("AddAll")}}</div>

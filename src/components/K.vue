@@ -192,8 +192,8 @@ export default {
         return this.redUpGreenDown ? '#ef232a' : '#14b143'
       },
       titleData(){
-        let idf = isNativeAsset(this.base) ? 'XLM' : this.base.code+'-'+this.base.issuer
-        let idt = isNativeAsset(this.counter) ? 'XLM' : this.counter.code +'-'+this.counter.issuer
+        let idf = isNativeAsset(this.base) ? 'FEE' : this.base.code+'-'+this.base.issuer
+        let idt = isNativeAsset(this.counter) ? 'FEE' : this.counter.code +'-'+this.counter.issuer
         let key = idf + '_' + idt;
         let d = this.tradePairsStat[key]
         if(d){

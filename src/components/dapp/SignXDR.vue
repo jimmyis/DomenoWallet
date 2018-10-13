@@ -108,7 +108,7 @@ export default {
     ...mapGetters(["balances", "reserve", "native", "base_fee",'base_reserve']),
     fee(){
       if(this.tx){
-        return new Decimal(this.tx.fee/10000000).toFixed(7) + 'XLM'
+        return new Decimal(this.tx.fee/10000000).toFixed(7) + 'FEE'
       }
       return null
     },

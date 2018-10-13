@@ -14,8 +14,8 @@
 
           <div class="label">{{$t('Asset')}}</div>
           <div class="value">
-            <span class="scode">XLM</span>
-            <span class="sissuer">stellar.org</span>
+            <span class="scode">FEE</span>
+            <span class="sissuer">domeno.network</span>
           </div>
          
           <v-text-field
@@ -23,13 +23,13 @@
               :label="$t('Amount')"
               v-model="amount"
               dark
-              suffix="XLM"
+              suffix="FEE"
               type="Number"
               ></v-text-field>
             <div class="receive_asset_msg">
               <span>{{$t("ReceiveAssetMsg")}}</span><br/>
               <span v-if="amount>0">{{amount}}&nbsp;</span>
-              <span v-if="amount>0">XLM</span>
+              <span v-if="amount>0">FEE</span>
             </div>
             <div class="qrcode">
               <qrcode :text="qrtext" :callback="qrcodecallback"/>
@@ -76,7 +76,7 @@ export default {
       //{"stellar":{"payment":{"destination":"GAD2....5UZ6","amount":1,"asset":{"code":"BTC","issuer":"GATEMH....MTCH"}}}}
       let data = {stellar:{payment:{
         destination:this.account.address,amount: this.amount,
-        asset: { code: 'XLM'} }}}
+        asset: { code: 'FEE'} }}}
       return JSON.stringify(data)
     },
 

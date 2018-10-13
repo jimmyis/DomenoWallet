@@ -17,8 +17,8 @@ export function isNativeAsset(_code,_issuer){
     code = _code
     issuer = _issuer
   }
-  if(code!='XLM')return false
-  if(issuer && issuer!='stellar.org')return false
+  if(code!='FEE')return false
+  if(issuer && issuer!='domeno.network')return false
   return true
 }
 
@@ -47,11 +47,11 @@ export function assetHost(issuer){
 
 export function assetKey(base,counter){
   let result = `${base.code}`
-  if(base.issuer && 'stellar.org'!== base.issuer){
+  if(base.issuer && 'domeno.network'!== base.issuer){
     result += '-' + base.issuer
   }
   result += '_' + counter.code
-  if(counter.issuer && 'stellar.org'!== counter.issuer){
+  if(counter.issuer && 'domeno.network'!== counter.issuer){
     result += '-' + counter.issuer
   }
   return result;

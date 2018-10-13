@@ -28,14 +28,14 @@ export class FFWAPI {
       this._baseCode = _base[0];
       this._baseIssuer = _base[1];
     }else{
-      this._baseCode = 'XLM';
+      this._baseCode = 'FEE';
     }
     if(counter.indexOf('_') >0){
       let _counter = counter.split('_');
       this._counterCode = _counter[0];
       this._counterIssuer = _counter[1];
     }else{
-      this._counterCode = 'XLM';
+      this._counterCode = 'FEE';
     }
   }
 
@@ -109,7 +109,7 @@ export class FFWAPI {
 
   /**
    * 返回K线数据
-   * https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_type=credit_alphanum12&counter_asset_code=XCN&counter_asset_issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY&start_time=1534150599762&end_time=1534151611026&resolution=60000&order=desc
+   * https://horizon.domeno.network/trade_aggregations?base_asset_type=native&counter_asset_type=credit_alphanum12&counter_asset_code=XCN&counter_asset_issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY&start_time=1534150599762&end_time=1534151611026&resolution=60000&order=desc
    */
   public history():Promise<any>{
     
@@ -197,7 +197,7 @@ class tradeAggregationsParams {
   }
 
   private isNativeAsset(code:string,issuer:string|undefined): boolean{
-    if(code === 'XLM' && issuer === undefined){
+    if(code === 'FEE' && issuer === undefined){
       return true;
     }
     return false;

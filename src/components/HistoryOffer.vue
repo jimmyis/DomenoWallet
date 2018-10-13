@@ -139,12 +139,12 @@ import { getXdrResultCode } from '@/api/xdr'
       convertOffer(offer){
         let data = {}
         if(offer.buying.asset_type === 'native'){
-          data.to = { code: 'XLM', issuer: 'stellar.org'}  
+          data.to = { code: 'FEE', issuer: 'domeno.network'}  
         }else{
           data.to = {code: offer.buying.asset_code, issuer: offer.buying.asset_issuer }
         } 
         if(offer.selling.asset_type === 'native'){
-          data.from = { code: 'XLM', issuer: 'stellar.org'}  
+          data.from = { code: 'FEE', issuer: 'domeno.network'}  
         }else{
           data.from =  {code: offer.selling.asset_code, issuer: offer.selling.asset_issuer }
         }

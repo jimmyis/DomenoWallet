@@ -128,10 +128,10 @@ import Scroll from '@/components/Scroll'
 import { REMOVE_TRADEPAIR_KLINE_DATA } from '@/store/modules/AccountsStore' 
 import { ZH_CN } from '@/locales/index'
 
-const TAG_ALL = 'All', TAG_XCN = 'XCN', TAG_XLM = 'XLM', TAG_BTC = 'BTC', TAG_ETH = 'ETH', TAG_CUSTOM = '_CUSTOM', TAG_XFF = 'XFF'
+const TAG_ALL = 'All', TAG_XCN = 'XCN', TAG_FEE = 'FEE', TAG_BTC = 'BTC', TAG_ETH = 'ETH', TAG_CUSTOM = '_CUSTOM', TAG_XFF = 'XFF'
 
-const TAGS_ZH_CN = [TAG_XCN, TAG_BTC, TAG_XLM, TAG_CUSTOM]
-const TAGS_OTHER = [TAG_BTC, TAG_XLM, TAG_XCN, TAG_CUSTOM]
+const TAGS_ZH_CN = [TAG_XCN, TAG_BTC, TAG_FEE, TAG_CUSTOM]
+const TAGS_OTHER = [TAG_BTC, TAG_FEE, TAG_XCN, TAG_CUSTOM]
 
 export default {
   data(){
@@ -186,8 +186,8 @@ export default {
       let custom_ids = []
       this.tradepairs.custom.forEach((item,index) => {
           custom.push(Object.assign({}, item,{tradepairIndex: 'custom_'+index, custom: true,index}))
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'FEE' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'FEE' : item.to.code +'-'+item.to.issuer
           custom_ids.push(idf+'_'+idt)
           custom_ids.push(idt+'_'+idf)
       })
@@ -204,8 +204,8 @@ export default {
         let copyarr = []
         for(let i=0,n=arr.length; i<n; i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'FEE' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'FEE' : item.to.code +'-'+item.to.issuer
           let isChoosed = false
           let ida = idf +'_'+idt
           let idb = idt +'_'+idf
@@ -277,7 +277,7 @@ export default {
     //   this.filterTag = TAG_CUSTOM
     //   this.tagIndex = TAGS.indexOf(TAG_CUSTOM).toString()
     // }
-    // this.allTagsLabel = [TAG_XCN, TAG_BTC, TAG_XLM, this.$t('custom')]
+    // this.allTagsLabel = [TAG_XCN, TAG_BTC, TAG_FEE, this.$t('custom')]
     this.reloadTradePairs().then(data=>{
       //this.allTags = []
      // this.allTagsLabel = []
@@ -309,10 +309,10 @@ export default {
       let locale = this.app.locale
       if(locale && locale.key !== ZH_CN.key){
         this.allTags = TAGS_OTHER
-        this.allTagsLabel = [TAG_BTC, TAG_XLM, TAG_XCN, this.$t('custom')]
+        this.allTagsLabel = [TAG_BTC, TAG_FEE, TAG_XCN, this.$t('custom')]
       }else{
         this.allTags = TAGS_ZH_CN
-        this.allTagsLabel = [TAG_XCN, TAG_BTC, TAG_XLM, this.$t('custom')]
+        this.allTagsLabel = [TAG_XCN, TAG_BTC, TAG_FEE, this.$t('custom')]
       }
       this.tagIndex = 0
       this.filterTag = this.allTags[0]
@@ -323,8 +323,8 @@ export default {
       let ids = this.getSysPairIds()
       for(let i=0,n=custom.length;i<n;i++){
         let item = custom[i]
-        let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-        let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+        let idf = isNativeAsset(item.from) ? 'FEE' : item.from.code+'-'+item.from.issuer
+        let idt = isNativeAsset(item.to) ? 'FEE' : item.to.code +'-'+item.to.issuer
         if(ids.indexOf(idf+'_'+idt) >=0)continue;
         promises.push(this.saveTradePairStat({base: getAsset(custom[i].from), counter: getAsset(custom[i].to)}))
       }
@@ -344,8 +344,8 @@ export default {
         let arr = this.sysTradePairs[key]
         for(let i=0,n=arr.length;i<n;i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'FEE' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'FEE' : item.to.code +'-'+item.to.issuer
           let ida = idf +'_'+idt
           ids.push(ida)
         }
@@ -384,10 +384,10 @@ export default {
       let to_issuer = this.balances[indexPair[1]].issuer
       let pair =  { from: {code:from_code,issuer:from_issuer}, 
               to: { code: to_code, issuer: to_issuer}  }
-      let key = from_code + (from_issuer||'stellar.org') + to_code + (to_issuer||'stellar.org')
+      let key = from_code + (from_issuer||'domeno.network') + to_code + (to_issuer||'domeno.network')
       for (let tp of this.tradepairs.custom){
-        let key1 = tp.from.code + (tp.from.issuer||'stellar.org')+tp.to.code + (tp.to.issuer||'stellar.org')
-        let key2 = tp.to.code + (tp.to.issuer||'stellar.org')+tp.from.code + (tp.from.issuer||'stellar.org')
+        let key1 = tp.from.code + (tp.from.issuer||'domeno.network')+tp.to.code + (tp.to.issuer||'domeno.network')
+        let key2 = tp.to.code + (tp.to.issuer||'domeno.network')+tp.from.code + (tp.from.issuer||'domeno.network')
         if(key === key1 || key === key2){
           this.$toasted.error(this.$t('Error.AddTradePair.ExistPair'))
           return 
@@ -506,8 +506,8 @@ export default {
       },1000)
     },
     delPairFromCustom(pair){
-      let idf1 = isNativeAsset(pair.from) ? 'XLM' : pair.from.code+'-'+pair.from.issuer
-      let idt1 = isNativeAsset(pair.to) ? 'XLM' : pair.to.code +'-'+pair.to.issuer 
+      let idf1 = isNativeAsset(pair.from) ? 'FEE' : pair.from.code+'-'+pair.from.issuer
+      let idt1 = isNativeAsset(pair.to) ? 'FEE' : pair.to.code +'-'+pair.to.issuer 
       let key1 = idf1 + "_" + idt1;
       let key2 = idt1 + "_" + idf1;
       let index = -1
@@ -515,8 +515,8 @@ export default {
       let tradepair = null
       for(let i=0,n=data.length;i<n;i++){
         let item = data[i]
-        let idf2 = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-        let idt2 = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+        let idf2 = isNativeAsset(item.from) ? 'FEE' : item.from.code+'-'+item.from.issuer
+        let idt2 = isNativeAsset(item.to) ? 'FEE' : item.to.code +'-'+item.to.issuer
         let key = idf2 + '_' + idt2
         if(key === key1 || key === key2){
           index = i;

@@ -34,11 +34,11 @@ export const INFLATION_POOL = [
 
 //默认交易对
 export const TRADE_PAIRS = [  {
-    from: {      code: 'XLM'   },
+    from: {      code: 'FEE'   },
     to: {      code: 'XCN',      issuer: 'GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY' }
-  },  {    from: {      code: 'XLM'    },
+  },  {    from: {      code: 'FEE'    },
     to: {      code: 'BTC',      issuer: 'GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH'}
-  },  {    from: {      code: 'XLM'    },
+  },  {    from: {      code: 'FEE'    },
     to: {      code: 'ETH',
       issuer: 'GBETHKBL5TCUTQ3JPDIYOZ5RDARTMHMEKIO2QZQ7IOZ4YC5XV3C2IKYU'
     }  }
@@ -46,9 +46,9 @@ export const TRADE_PAIRS = [  {
 
 
 export const ASSETS_ISSUER_HOST = {
-  'XLM': {
-    code: 'XLM',
-    host: 'stellar.org'
+  'FEE': {
+    code: 'FEE',
+    host: 'domeno.network'
   },
   'GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX': {
     code: 'CNY',
@@ -168,7 +168,7 @@ export const COINS_ICON = {
   ETC: 'icon-ETC',
   LTC: 'icon-LTC',
   XRP: 'icon-XRP',
-  XLM: 'icon-XLM',
+  FEE: 'icon-FEE',
   ETH: 'icon-ETH',
   BTC: 'icon-btc',
   XEL: 'icon-xel',
@@ -182,7 +182,7 @@ export const COINS_ICON = {
 
 export const FF_ICON = 'icon-zhanwei'
 
-export const DEFAULT_ICON = 'icon-XLM'
+export const DEFAULT_ICON = 'icon-FEE'
 
 export const WORD_ICON = {
   'W':'icon-shouzimuzhanweiW',
