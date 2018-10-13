@@ -7,6 +7,7 @@
       :showmenuicon="showmenuicon" 
       :showbackicon="showbackicon"
       ref="toolbar"
+      class="toolbar"
       >
       <!-- <v-btn icon slot='left-tool' @click="toThirdApps">
         <i class="material-icons">apps</i>
@@ -483,5 +484,19 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/stylus/asset.styl'
 @require '~@/stylus/settings.styl'
+
+.toolbar
+  i
+    color: $secondarycolor.white
+  .btn
+    .btn--icon
+      color: $secondarycolor.white
+  .iconfont
+    font-size: 24px
+    color: $secondarycolor.white
+  .material-icons
+    font-size: 24px
+    color: $secondarycolor.white
+
 </style>
 
