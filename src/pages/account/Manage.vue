@@ -459,6 +459,17 @@ export default {
   -webkit-transition: 0.3s
   transform: translate(-50%, 0)
   transition: 0.3s
-
+.toolbar
+  i
+    color: $secondarycolor.white
+  .btn
+    .btn--icon
+      color: $secondarycolor.white
+  .iconfont
+    font-size: 24px
+    color: $secondarycolor.white
+  .material-icons
+    font-size: 24px
+    color: $secondarycolor.white
 </style>
 
